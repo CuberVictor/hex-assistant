@@ -1,3 +1,4 @@
 *.json
+!_routes.json
 *.xlsx
 cosmic-nibbling-star.md
