@@ -1,0 +1,8 @@
+{
+  "functions": [
+    {
+      "path": "/api/chat",
+      "file": "api/chat.js"
+    }
+  ]
+}

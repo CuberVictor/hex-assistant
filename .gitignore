@@ -1,3 +1,8 @@
-*.json
 *.xlsx
 cosmic-nibbling-star.md
+champions_data.json
+augments_data.json
+champion_winrates.json
+champion_winrates_fixed.json
+augments_raw.json
+augment_descriptions.json
