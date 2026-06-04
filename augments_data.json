@@ -1,0 +1,1367 @@
+[
+  {
+    "name": "回归基本功",
+    "image": "/augments/Back_To_Basics_mayhem_augment.webp",
+    "href": "/zh-cn/augments/back-to-basics",
+    "tier": "prismatic",
+    "text": "53.84%回归基本功"
+  },
+  {
+    "name": "史上最大雪球",
+    "image": "/augments/Biggest_Snowball_Ever_mayhem_augment.webp",
+    "href": "/zh-cn/augments/biggest-snowball-ever",
+    "tier": "prismatic",
+    "text": "53.69%史上最大雪球"
+  },
+  {
+    "name": "利刃华尔兹",
+    "image": "/augments/Blade_Waltz_mayhem_augment.webp",
+    "href": "/zh-cn/augments/blade-waltz",
+    "tier": "prismatic",
+    "text": "48.29%利刃华尔兹"
+  },
+  {
+    "name": "魄罗之王的弹跳",
+    "image": "/augments/Bounce_of_the_Poro_King_mayhem_augment.webp",
+    "href": "/zh-cn/augments/bounce-of-the-poro-king",
+    "tier": "prismatic",
+    "text": "50.58%魄罗之王的弹跳"
+  },
+  {
+    "name": "你摸不到",
+    "image": "/augments/Cant_Touch_This_mayhem_augment.webp",
+    "href": "/zh-cn/augments/cant-touch-this",
+    "tier": "prismatic",
+    "text": "46.71%你摸不到"
+  },
+  {
+    "name": "地狱三头犬",
+    "image": "/augments/Cerberus_mayhem_augment.webp",
+    "href": "/zh-cn/augments/cerberus",
+    "tier": "prismatic",
+    "text": "48.62%地狱三头犬"
+  },
+  {
+    "name": "死亡之环",
+    "image": "/augments/Circle_of_Death_mayhem_augment.webp",
+    "href": "/zh-cn/augments/circle-of-death",
+    "tier": "prismatic",
+    "text": "50.69%死亡之环"
+  },
+  {
+    "name": "小丑学院",
+    "image": "/augments/Clown_College_mayhem_augment.webp",
+    "href": "/zh-cn/augments/clown-college",
+    "tier": "prismatic",
+    "text": "57.46%小丑学院"
+  },
+  {
+    "name": "巨像的勇气",
+    "image": "/augments/Courage_of_the_Colossus_mayhem_augment.webp",
+    "href": "/zh-cn/augments/courage-of-the-colossus",
+    "tier": "prismatic",
+    "text": "49.36%巨像的勇气"
+  },
+  {
+    "name": "残忍",
+    "image": "/augments/Cruelty_mayhem_augment.webp",
+    "href": "/zh-cn/augments/cruelty",
+    "tier": "prismatic",
+    "text": "51.25%残忍"
+  },
+  {
+    "name": "全凭身法",
+    "image": "/augments/Dashing_mayhem_augment.webp",
+    "href": "/zh-cn/augments/dashing",
+    "tier": "prismatic",
+    "text": "50.31%全凭身法"
+  },
+  {
+    "name": "你肩上的恶魔",
+    "image": "/augments/Devil_on_Your_Shoulder_mayhem_augment.webp",
+    "href": "/zh-cn/augments/devil-on-your-shoulder",
+    "tier": "prismatic",
+    "text": "47.73%你肩上的恶魔"
+  },
+  {
+    "name": "亮出你的剑",
+    "image": "/augments/Draw_Your_Sword_mayhem_augment.webp",
+    "href": "/zh-cn/augments/draw-your-sword",
+    "tier": "prismatic",
+    "text": "61.33%亮出你的剑"
+  },
+  {
+    "name": "飞身踢",
+    "image": "/augments/Dropkick_mayhem_augment.webp",
+    "href": "/zh-cn/augments/dropkick",
+    "tier": "prismatic",
+    "text": "57.71%飞身踢"
+  },
+  {
+    "name": "卡皮巴拉空投",
+    "image": "/augments/Droppybara_mayhem_augment.webp",
+    "href": "/zh-cn/augments/droppybara",
+    "tier": "prismatic",
+    "text": "47.48%卡皮巴拉空投"
+  },
+  {
+    "name": "双刀流",
+    "image": "/augments/Dual_Wield_mayhem_augment.webp",
+    "href": "/zh-cn/augments/dual-wield",
+    "tier": "prismatic",
+    "text": "58.14%双刀流"
+  },
+  {
+    "name": "信念者的强化",
+    "image": "/augments/Empowered_By_The_Faithful_mayhem_augment.webp",
+    "href": "/zh-cn/augments/empowered-by-the-faithful",
+    "tier": "prismatic",
+    "text": "48.16%信念者的强化"
+  },
+  {
+    "name": "至高天诺言",
+    "image": "/augments/Empyrean_Promise_mayhem_augment.webp",
+    "href": "/zh-cn/augments/empyrean-promise",
+    "tier": "prismatic",
+    "text": "48.03%至高天诺言"
+  },
+  {
+    "name": "尤里卡",
+    "image": "/augments/Eureka_mayhem_augment.webp",
+    "href": "/zh-cn/augments/eureka",
+    "tier": "prismatic",
+    "text": "58.41%尤里卡"
+  },
+  {
+    "name": "连拨击锤",
+    "image": "/augments/Fan_The_Hammer_mayhem_augment.webp",
+    "href": "/zh-cn/augments/fan-the-hammer",
+    "tier": "prismatic",
+    "text": "56.85%连拨击锤"
+  },
+  {
+    "name": "感受燃烧",
+    "image": "/augments/Feel_the_Burn_mayhem_augment.webp",
+    "href": "/zh-cn/augments/feel-the-burn",
+    "tier": "prismatic",
+    "text": "49.34%感受燃烧"
+  },
+  {
+    "name": "精怪魔法",
+    "image": "/augments/Fey_Magic_mayhem_augment.webp",
+    "href": "/zh-cn/augments/fey-magic",
+    "tier": "prismatic",
+    "text": "47.29%精怪魔法"
+  },
+  {
+    "name": "最终形态",
+    "image": "/augments/Final_Form_mayhem_augment.webp",
+    "href": "/zh-cn/augments/final-form",
+    "tier": "prismatic",
+    "text": "52.17%最终形态"
+  },
+  {
+    "name": "砍伤",
+    "image": "/augments/Gash_mayhem_augment.webp",
+    "href": "/zh-cn/augments/gash",
+    "tier": "prismatic",
+    "text": "50.56%砍伤"
+  },
+  {
+    "name": "巨人杀手",
+    "image": "/augments/Giant_Slayer_mayhem_augment.webp",
+    "href": "/zh-cn/augments/giant-slayer",
+    "tier": "prismatic",
+    "text": "59.44%巨人杀手"
+  },
+  {
+    "name": "玻璃大炮",
+    "image": "/augments/Glass_Cannon_mayhem_augment.webp",
+    "href": "/zh-cn/augments/glass-cannon",
+    "tier": "prismatic",
+    "text": "46.69%玻璃大炮"
+  },
+  {
+    "name": "夺金",
+    "image": "/augments/Goldrend_mayhem_augment.webp",
+    "href": "/zh-cn/augments/goldrend",
+    "tier": "prismatic",
+    "text": "51.19%夺金"
+  },
+  {
+    "name": "歌利亚巨人",
+    "image": "/augments/Goliath_mayhem_augment.webp",
+    "href": "/zh-cn/augments/goliath",
+    "tier": "prismatic",
+    "text": "56.60%歌利亚巨人"
+  },
+  {
+    "name": "男爵之手",
+    "image": "/augments/Hand_of_Baron_mayhem_augment.webp",
+    "href": "/zh-cn/augments/hand-of-baron",
+    "tier": "prismatic",
+    "text": "52.24%男爵之手"
+  },
+  {
+    "name": "当心小蛋糕！",
+    "image": "/augments/Heads_Up_Cupcake!_mayhem_augment.webp",
+    "href": "/zh-cn/augments/heads-up-cupcake",
+    "tier": "prismatic",
+    "text": "50.82%当心小蛋糕！"
+  },
+  {
+    "name": "神圣雪球",
+    "image": "/augments/Holy_Snowball_mayhem_augment.webp",
+    "href": "/zh-cn/augments/holy-snowball",
+    "tier": "prismatic",
+    "text": "47.19%神圣雪球"
+  },
+  {
+    "name": "小猫咪找妈妈",
+    "image": "/augments/I'm_a_Baby_Kitty_Where_is_Mama_mayhem_augment.webp",
+    "href": "/zh-cn/augments/im-a-baby-kitty-where-is-mama",
+    "tier": "prismatic",
+    "text": "49.47%小猫咪找妈妈"
+  },
+  {
+    "name": "炼狱导管",
+    "image": "/augments/Infernal_Conduit_mayhem_augment.webp",
+    "href": "/zh-cn/augments/infernal-conduit",
+    "tier": "prismatic",
+    "text": "57.97%炼狱导管"
+  },
+  {
+    "name": "无限循环往复",
+    "image": "/augments/Infinite_Recursion_mayhem_augment.webp",
+    "href": "/zh-cn/augments/infinite-recursion",
+    "tier": "prismatic",
+    "text": "57.42%无限循环往复"
+  },
+  {
+    "name": "珠光护手",
+    "image": "/augments/Jeweled_Gauntlet_mayhem_augment.webp",
+    "href": "/zh-cn/augments/jeweled-gauntlet",
+    "tier": "prismatic",
+    "text": "58.93%珠光护手"
+  },
+  {
+    "name": "尊我为王",
+    "image": "/augments/King_Me_mayhem_augment.webp",
+    "href": "/zh-cn/augments/king-me",
+    "tier": "prismatic",
+    "text": "52.78%尊我为王"
+  },
+  {
+    "name": "激光治疗",
+    "image": "/augments/Laser_Heal_mayhem_augment.webp",
+    "href": "/zh-cn/augments/laser-heal",
+    "tier": "prismatic",
+    "text": "49.86%激光治疗"
+  },
+  {
+    "name": "科学狂人",
+    "image": "/augments/Mad_Scientist_mayhem_augment.webp",
+    "href": "/zh-cn/augments/mad-scientist",
+    "tier": "prismatic",
+    "text": "53.67%科学狂人"
+  },
+  {
+    "name": "物法皆修",
+    "image": "/augments/Master_of_Duality_mayhem_augment.webp",
+    "href": "/zh-cn/augments/master-of-duality",
+    "tier": "prismatic",
+    "text": "51.42%物法皆修"
+  },
+  {
+    "name": "秘术冲拳",
+    "image": "/augments/Mystic_Punch_mayhem_augment.webp",
+    "href": "/zh-cn/augments/mystic-punch",
+    "tier": "prismatic",
+    "text": "53.60%秘术冲拳"
+  },
+  {
+    "name": "不祥契约",
+    "image": "/augments/Ominous_Pact_mayhem_augment.webp",
+    "href": "/zh-cn/augments/ominous-pact",
+    "tier": "prismatic",
+    "text": "49.18%不祥契约"
+  },
+  {
+    "name": "全能龙魂",
+    "image": "/augments/Omni_Soul_mayhem_augment.webp",
+    "href": "/zh-cn/augments/omni-soul",
+    "tier": "prismatic",
+    "text": "51.00%全能龙魂"
+  },
+  {
+    "name": "轨道镭射",
+    "image": "/augments/OrbitalLaser_mayhem_augment.webp",
+    "href": "/zh-cn/augments/orbitallaser",
+    "tier": "prismatic",
+    "text": "46.67%轨道镭射"
+  },
+  {
+    "name": "潘朵拉的盒子",
+    "image": "/augments/PandorasBox_mayhem_augment.webp",
+    "href": "/zh-cn/augments/pandorasbox",
+    "tier": "prismatic",
+    "text": "54.80%潘朵拉的盒子"
+  },
+  {
+    "name": "舞会女王",
+    "image": "/augments/Prom_Queen_mayhem_augment.webp",
+    "href": "/zh-cn/augments/prom-queen",
+    "tier": "prismatic",
+    "text": "48.52%舞会女王"
+  },
+  {
+    "name": "蛋白粉奶昔",
+    "image": "/augments/Protein_Shake_mayhem_augment.webp",
+    "href": "/zh-cn/augments/protein-shake",
+    "tier": "prismatic",
+    "text": "47.90%蛋白粉奶昔"
+  },
+  {
+    "name": "量子计算",
+    "image": "/augments/Quantum_Computing_mayhem_augment.webp",
+    "href": "/zh-cn/augments/quantum-computing",
+    "tier": "prismatic",
+    "text": "45.78%量子计算"
+  },
+  {
+    "name": "任务：海牛阿福的勇士",
+    "image": "/augments/Quest:_Urf's_Champion_mayhem_augment.webp",
+    "href": "/zh-cn/augments/quest-urfs-champion",
+    "tier": "prismatic",
+    "text": "50.45%任务：海牛阿福的勇士"
+  },
+  {
+    "name": "任务：沃格勒特的巫师帽",
+    "image": "/augments/Quest:_Wooglet's_Witchcap_mayhem_augment.webp",
+    "href": "/zh-cn/augments/quest-wooglets-witchcap",
+    "tier": "prismatic",
+    "text": "53.74%任务：沃格勒特的巫师帽"
+  },
+  {
+    "name": "红包",
+    "image": "/augments/Red_Envelopes_mayhem_augment.webp",
+    "href": "/zh-cn/augments/red-envelopes",
+    "tier": "prismatic",
+    "text": "57.66%红包"
+  },
+  {
+    "name": "最万用的瞄准镜",
+    "image": "/augments/Scopiest_Weapons_mayhem_augment.webp",
+    "href": "/zh-cn/augments/scopiest-weapons",
+    "tier": "prismatic",
+    "text": "52.60%最万用的瞄准镜"
+  },
+  {
+    "name": "慢炖",
+    "image": "/augments/Slow_Cooker_mayhem_augment.webp",
+    "href": "/zh-cn/augments/slow-cooker",
+    "tier": "prismatic",
+    "text": "57.06%慢炖"
+  },
+  {
+    "name": "属性叠属性叠属性！",
+    "image": "/augments/Stats_on_Stats_on_Stats!_mayhem_augment.webp",
+    "href": "/zh-cn/augments/stats-on-stats-on-stats",
+    "tier": "prismatic",
+    "text": "55.95%属性叠属性叠属性！"
+  },
+  {
+    "name": "和我一起困在这里",
+    "image": "/augments/Stuck_In_Here_With_Me_mayhem_augment.webp",
+    "href": "/zh-cn/augments/stuck-in-here-with-me",
+    "tier": "prismatic",
+    "text": "46.24%和我一起困在这里"
+  },
+  {
+    "name": "战争交响乐",
+    "image": "/augments/Symphony_of_War_mayhem_augment.webp",
+    "href": "/zh-cn/augments/symphony-of-war",
+    "tier": "prismatic",
+    "text": "50.66%战争交响乐"
+  },
+  {
+    "name": "踢踏舞",
+    "image": "/augments/Tap_Dancer_mayhem_augment.webp",
+    "href": "/zh-cn/augments/tap-dancer",
+    "tier": "prismatic",
+    "text": "55.11%踢踏舞"
+  },
+  {
+    "name": "质变：混沌",
+    "image": "/augments/Transmute:_Chaos_mayhem_augment.webp",
+    "href": "/zh-cn/augments/transmute-chaos",
+    "tier": "prismatic",
+    "text": "59.36%质变：混沌"
+  },
+  {
+    "name": "扳机炼狱",
+    "image": "/augments/Triggered_Inferno_mayhem_augment.webp",
+    "href": "/zh-cn/augments/triggered-inferno",
+    "tier": "prismatic",
+    "text": "48.62%扳机炼狱"
+  },
+  {
+    "name": "精准奇才",
+    "image": "/augments/TrueshotProdigy_mayhem_augment.webp",
+    "href": "/zh-cn/augments/trueshotprodigy",
+    "tier": "prismatic",
+    "text": "46.83%精准奇才"
+  },
+  {
+    "name": "终极唤醒",
+    "image": "/augments/Ultimate_Awakening_mayhem_augment.webp",
+    "href": "/zh-cn/augments/ultimate-awakening",
+    "tier": "prismatic",
+    "text": "48.36%终极唤醒"
+  },
+  {
+    "name": "终极刷新",
+    "image": "/augments/Ultimate_Revolution_mayhem_augment.webp",
+    "href": "/zh-cn/augments/ultimate-revolution",
+    "tier": "prismatic",
+    "text": "47.23%终极刷新"
+  },
+  {
+    "name": "升级：米凯尔的祝福",
+    "image": "/augments/Upgrade_Mikael's_Blessing_mayhem_augment.webp",
+    "href": "/zh-cn/augments/upgrade-mikaels-blessing",
+    "tier": "prismatic",
+    "text": "54.84%升级：米凯尔的祝福"
+  },
+  {
+    "name": "任务：艾卡西亚的陷落",
+    "image": "/augments/Void_Immolation_mayhem_augment.webp",
+    "href": "/zh-cn/augments/void-immolation",
+    "tier": "prismatic",
+    "text": "55.94%任务：艾卡西亚的陷落"
+  },
+  {
+    "name": "虚空裂隙",
+    "image": "/augments/Void_Rift_mayhem_augment.webp",
+    "href": "/zh-cn/augments/void-rift",
+    "tier": "prismatic",
+    "text": "62.10%虚空裂隙"
+  },
+  {
+    "name": "风语者的祝福",
+    "image": "/augments/Windspeaker's_Blessing_mayhem_augment.webp",
+    "href": "/zh-cn/augments/windspeakers-blessing",
+    "tier": "prismatic",
+    "text": "51.54%风语者的祝福"
+  },
+  {
+    "name": "全心为你",
+    "image": "/augments/All_For_You_mayhem_augment.webp",
+    "href": "/zh-cn/augments/all-for-you",
+    "tier": "prismatic",
+    "text": "49.40%全心为你"
+  },
+  {
+    "name": "尖端发明家",
+    "image": "/augments/Apex_Inventor_mayhem_augment.webp",
+    "href": "/zh-cn/augments/apex-inventor",
+    "tier": "prismatic",
+    "text": "50.02%尖端发明家"
+  },
+  {
+    "name": "超强大脑",
+    "image": "/augments/Big_Brain_mayhem_augment.webp",
+    "href": "/zh-cn/augments/big-brain",
+    "tier": "prismatic",
+    "text": "53.24%超强大脑"
+  },
+  {
+    "name": "面包和黄油",
+    "image": "/augments/Bread_And_Butter_mayhem_augment.webp",
+    "href": "/zh-cn/augments/bread-and-butter",
+    "tier": "prismatic",
+    "text": "50.43%面包和黄油"
+  },
+  {
+    "name": "面包和奶酪",
+    "image": "/augments/Bread_and_Cheese_mayhem_augment.webp",
+    "href": "/zh-cn/augments/bread-and-cheese",
+    "tier": "prismatic",
+    "text": "50.14%面包和奶酪"
+  },
+  {
+    "name": "面包和果酱",
+    "image": "/augments/Bread_And_Jam_mayhem_augment.webp",
+    "href": "/zh-cn/augments/bread-and-jam",
+    "tier": "prismatic",
+    "text": "48.65%面包和果酱"
+  },
+  {
+    "name": "星界躯体",
+    "image": "/augments/Celestial_Body_mayhem_augment.webp",
+    "href": "/zh-cn/augments/celestial-body",
+    "tier": "prismatic",
+    "text": "55.86%星界躯体"
+  },
+  {
+    "name": "作弊：我能回城！",
+    "image": "/augments/Cheating_mayhem_augment.webp",
+    "href": "/zh-cn/augments/cheating",
+    "tier": "prismatic",
+    "text": "52.28%作弊：我能回城！"
+  },
+  {
+    "name": "会心治疗",
+    "image": "/augments/Critical_Healing_mayhem_augment.webp",
+    "href": "/zh-cn/augments/critical-healing",
+    "tier": "prismatic",
+    "text": "54.99%会心治疗"
+  },
+  {
+    "name": "暴击飞弹",
+    "image": "/augments/Critical_Missile_mayhem_augment.webp",
+    "href": "/zh-cn/augments/critical-missile",
+    "tier": "prismatic",
+    "text": "62.32%暴击飞弹"
+  },
+  {
+    "name": "暴击律动",
+    "image": "/augments/Critical_Rhythm_mayhem_augment.webp",
+    "href": "/zh-cn/augments/critical-rhythm",
+    "tier": "prismatic",
+    "text": "53.46%暴击律动"
+  },
+  {
+    "name": "黎明使者的坚决",
+    "image": "/augments/Dawnbringer's_Resolve_mayhem_augment.webp",
+    "href": "/zh-cn/augments/dawnbringers-resolve",
+    "tier": "prismatic",
+    "text": "49.78%黎明使者的坚决"
+  },
+  {
+    "name": "魔鬼之舞",
+    "image": "/augments/Demon's_Dance_mayhem_augment.webp",
+    "href": "/zh-cn/augments/demons-dance",
+    "tier": "prismatic",
+    "text": "50.98%魔鬼之舞"
+  },
+  {
+    "name": "神圣干预",
+    "image": "/augments/Divine_Intervention_mayhem_augment.webp",
+    "href": "/zh-cn/augments/divine-intervention",
+    "tier": "prismatic",
+    "text": "49.12%神圣干预"
+  },
+  {
+    "name": "捐赠",
+    "image": "/augments/Donation_mayhem_augment.webp",
+    "href": "/zh-cn/augments/donation",
+    "tier": "prismatic",
+    "text": "56.74%捐赠"
+  },
+  {
+    "name": "双发快射",
+    "image": "/augments/Double_Tap_mayhem_augment.webp",
+    "href": "/zh-cn/augments/double-tap",
+    "tier": "prismatic",
+    "text": "53.29%双发快射"
+  },
+  {
+    "name": "虚幻武器",
+    "image": "/augments/Ethereal_Weapon_mayhem_augment.webp",
+    "href": "/zh-cn/augments/ethereal-weapon",
+    "tier": "prismatic",
+    "text": "51.90%虚幻武器"
+  },
+  {
+    "name": "裁决使",
+    "image": "/augments/Executioner_mayhem_augment.webp",
+    "href": "/zh-cn/augments/executioner",
+    "tier": "prismatic",
+    "text": "59.52%裁决使"
+  },
+  {
+    "name": "最终都市列车",
+    "image": "/augments/Final_City_Transit_mayhem_augment.webp",
+    "href": "/zh-cn/augments/final-city-transit",
+    "tier": "prismatic",
+    "text": "51.86%最终都市列车"
+  },
+  {
+    "name": "火上浇油",
+    "image": "/augments/Firebrand_mayhem_augment.webp",
+    "href": "/zh-cn/augments/firebrand",
+    "tier": "prismatic",
+    "text": "50.23%火上浇油"
+  },
+  {
+    "name": "有始有终",
+    "image": "/augments/From_Beginning_To_End_mayhem_augment.webp",
+    "href": "/zh-cn/augments/from-beginning-to-end",
+    "tier": "prismatic",
+    "text": "57.12%有始有终"
+  },
+  {
+    "name": "罪恶快感",
+    "image": "/augments/Get_Excited!_mayhem_augment.webp",
+    "href": "/zh-cn/augments/get-excited",
+    "tier": "prismatic",
+    "text": "53.03%罪恶快感"
+  },
+  {
+    "name": "祖母的辣椒油",
+    "image": "/augments/Grandma's_Chili_Oil_mayhem_augment.webp",
+    "href": "/zh-cn/augments/grandmas-chili-oil",
+    "tier": "prismatic",
+    "text": "58.24%祖母的辣椒油"
+  },
+  {
+    "name": "生机迸发",
+    "image": "/augments/Growth_Spurt_mayhem_augment.webp",
+    "href": "/zh-cn/augments/growth-spurt",
+    "tier": "prismatic",
+    "text": "50.80%生机迸发"
+  },
+  {
+    "name": "圣火",
+    "image": "/augments/Holy_Fire_mayhem_augment.webp",
+    "href": "/zh-cn/augments/holy-fire",
+    "tier": "prismatic",
+    "text": "48.50%圣火"
+  },
+  {
+    "name": "不动如山",
+    "image": "/augments/Impassable_mayhem_augment.webp",
+    "href": "/zh-cn/augments/impassable",
+    "tier": "prismatic",
+    "text": "48.71%不动如山"
+  },
+  {
+    "name": "关键暴击",
+    "image": "/augments/It's_Critical_mayhem_augment.webp",
+    "href": "/zh-cn/augments/its-critical",
+    "tier": "prismatic",
+    "text": "49.65%关键暴击"
+  },
+  {
+    "name": "杀戮时间到了",
+    "image": "/augments/It's_Killing_Time_mayhem_augment.webp",
+    "href": "/zh-cn/augments/its-killing-time",
+    "tier": "prismatic",
+    "text": "50.80%杀戮时间到了"
+  },
+  {
+    "name": "基石法师",
+    "image": "/augments/Keystone_Conjurer_mayhem_augment.webp",
+    "href": "/zh-cn/augments/keystone-conjurer",
+    "tier": "prismatic",
+    "text": "51.01%基石法师"
+  },
+  {
+    "name": "闪电打击",
+    "image": "/augments/Lightning_Strikes_mayhem_augment.webp",
+    "href": "/zh-cn/augments/lightning-strikes",
+    "tier": "prismatic",
+    "text": "54.44%闪电打击"
+  },
+  {
+    "name": "魔法飞弹",
+    "image": "/augments/Magic_Missile_mayhem_augment.webp",
+    "href": "/zh-cn/augments/magic-missile",
+    "tier": "prismatic",
+    "text": "60.87%魔法飞弹"
+  },
+  {
+    "name": "神射法师",
+    "image": "/augments/Marksmage_mayhem_augment.webp",
+    "href": "/zh-cn/augments/marksmage",
+    "tier": "prismatic",
+    "text": "51.73%神射法师"
+  },
+  {
+    "name": "仆从大师",
+    "image": "/augments/Minionmancer_mayhem_augment.webp",
+    "href": "/zh-cn/augments/minionmancer",
+    "tier": "prismatic",
+    "text": "50.47%仆从大师"
+  },
+  {
+    "name": "夜狩",
+    "image": "/augments/Nightstalking_mayhem_augment.webp",
+    "href": "/zh-cn/augments/nightstalking",
+    "tier": "prismatic",
+    "text": "48.30%夜狩"
+  },
+  {
+    "name": "回力OK镖",
+    "image": "/augments/Ok_Boomerang_mayhem_augment.webp",
+    "href": "/zh-cn/augments/ok-boomerang",
+    "tier": "prismatic",
+    "text": "50.69%回力OK镖"
+  },
+  {
+    "name": "狂徒豪气",
+    "image": "/augments/Outlaw's_Grit_mayhem_augment.webp",
+    "href": "/zh-cn/augments/outlaws-grit",
+    "tier": "prismatic",
+    "text": "52.31%狂徒豪气"
+  },
+  {
+    "name": "溢流",
+    "image": "/augments/Overflow_mayhem_augment.webp",
+    "href": "/zh-cn/augments/overflow",
+    "tier": "prismatic",
+    "text": "54.20%溢流"
+  },
+  {
+    "name": "坚韧",
+    "image": "/augments/Perseverance_mayhem_augment.webp",
+    "href": "/zh-cn/augments/perseverance",
+    "tier": "prismatic",
+    "text": "52.65%坚韧"
+  },
+  {
+    "name": "超凡邪恶",
+    "image": "/augments/Phenomenal_Evil_mayhem_augment.webp",
+    "href": "/zh-cn/augments/phenomenal-evil",
+    "tier": "prismatic",
+    "text": "60.78%超凡邪恶"
+  },
+  {
+    "name": "弹球",
+    "image": "/augments/Pinball_mayhem_augment.webp",
+    "href": "/zh-cn/augments/pinball",
+    "tier": "prismatic",
+    "text": "50.94%弹球"
+  },
+  {
+    "name": "魄罗爆破手",
+    "image": "/augments/Poro_Blaster_mayhem_augment.webp",
+    "href": "/zh-cn/augments/poro-blaster",
+    "tier": "prismatic",
+    "text": "53.94%魄罗爆破手"
+  },
+  {
+    "name": "任务：钢化你心",
+    "image": "/augments/Quest:_Steel_Your_Heart_mayhem_augment.webp",
+    "href": "/zh-cn/augments/quest-steel-your-heart",
+    "tier": "prismatic",
+    "text": "61.59%任务：钢化你心"
+  },
+  {
+    "name": "古式佳酿",
+    "image": "/augments/Rabble_Rousing_mayhem_augment.webp",
+    "href": "/zh-cn/augments/rabble-rousing",
+    "tier": "prismatic",
+    "text": "52.48%古式佳酿"
+  },
+  {
+    "name": "循环往复",
+    "image": "/augments/Recursion_mayhem_augment.webp",
+    "href": "/zh-cn/augments/recursion",
+    "tier": "prismatic",
+    "text": "53.94%循环往复"
+  },
+  {
+    "name": "无休回复",
+    "image": "/augments/Restless_Restoration_mayhem_augment.webp",
+    "href": "/zh-cn/augments/restless-restoration",
+    "tier": "prismatic",
+    "text": "51.75%无休回复"
+  },
+  {
+    "name": "更万用的瞄准镜",
+    "image": "/augments/Scopier_Weapons_mayhem_augment.webp",
+    "href": "/zh-cn/augments/scopier-weapons",
+    "tier": "prismatic",
+    "text": "56.02%更万用的瞄准镜"
+  },
+  {
+    "name": "炽烈黎明",
+    "image": "/augments/Searing_Dawn_mayhem_augment.webp",
+    "href": "/zh-cn/augments/searing-dawn",
+    "tier": "prismatic",
+    "text": "47.92%炽烈黎明"
+  },
+  {
+    "name": "缩小引擎",
+    "image": "/augments/Shrink_Engine_mayhem_augment.webp",
+    "href": "/zh-cn/augments/shrink-engine",
+    "tier": "prismatic",
+    "text": "62.17%缩小引擎"
+  },
+  {
+    "name": "缩小射线",
+    "image": "/augments/Shrink_Ray_mayhem_augment.webp",
+    "href": "/zh-cn/augments/shrink-ray",
+    "tier": "prismatic",
+    "text": "48.04%缩小射线"
+  },
+  {
+    "name": "老练狙神",
+    "image": "/augments/Skilled_Sniper_mayhem_augment.webp",
+    "href": "/zh-cn/augments/skilled-sniper",
+    "tier": "prismatic",
+    "text": "51.42%老练狙神"
+  },
+  {
+    "name": "一板一眼",
+    "image": "/augments/Slow_And_Steady_mayhem_augment.webp",
+    "href": "/zh-cn/augments/slow-and-steady",
+    "tier": "prismatic",
+    "text": "51.23%一板一眼"
+  },
+  {
+    "name": "雪球扭蛋机",
+    "image": "/augments/Snowball_Roulette_mayhem_augment.webp",
+    "href": "/zh-cn/augments/snowball-roulette",
+    "tier": "prismatic",
+    "text": "52.10%雪球扭蛋机"
+  },
+  {
+    "name": "升级：雪球",
+    "image": "/augments/Snowball_Upgrade_mayhem_augment.webp",
+    "href": "/zh-cn/augments/snowball-upgrade",
+    "tier": "prismatic",
+    "text": "53.60%升级：雪球"
+  },
+  {
+    "name": "咏叹奏鸣",
+    "image": "/augments/Sonata_mayhem_augment.webp",
+    "href": "/zh-cn/augments/sonata",
+    "tier": "prismatic",
+    "text": "54.56%咏叹奏鸣"
+  },
+  {
+    "name": "吞噬灵魂",
+    "image": "/augments/Soul_Eater_mayhem_augment.webp",
+    "href": "/zh-cn/augments/soul-eater",
+    "tier": "prismatic",
+    "text": "57.71%吞噬灵魂"
+  },
+  {
+    "name": "灵魂虹吸",
+    "image": "/augments/Soul_Siphon_mayhem_augment.webp",
+    "href": "/zh-cn/augments/soul-siphon",
+    "tier": "prismatic",
+    "text": "52.99%灵魂虹吸"
+  },
+  {
+    "name": "心灵净化",
+    "image": "/augments/Spiritual_Purification_mayhem_augment.webp",
+    "href": "/zh-cn/augments/spiritual-purification",
+    "tier": "prismatic",
+    "text": "50.84%心灵净化"
+  },
+  {
+    "name": "属性叠属性！",
+    "image": "/augments/Stats_on_Stats!_mayhem_augment.webp",
+    "href": "/zh-cn/augments/stats-on-stats",
+    "tier": "prismatic",
+    "text": "62.21%属性叠属性！"
+  },
+  {
+    "name": "坦克引擎",
+    "image": "/augments/Tank_Engine_mayhem_augment.webp",
+    "href": "/zh-cn/augments/tank-engine",
+    "tier": "prismatic",
+    "text": "63.34%坦克引擎"
+  },
+  {
+    "name": "穿针引线",
+    "image": "/augments/Thread_the_Needle_mayhem_augment.webp",
+    "href": "/zh-cn/augments/thread-the-needle",
+    "tier": "prismatic",
+    "text": "53.68%穿针引线"
+  },
+  {
+    "name": "质变：棱彩阶",
+    "image": "/augments/Transmute:_Prismatic_mayhem_augment.webp",
+    "href": "/zh-cn/augments/transmute-prismatic",
+    "tier": "prismatic",
+    "text": "66.81%质变：棱彩阶"
+  },
+  {
+    "name": "接二连三",
+    "image": "/augments/Twice_Thrice_mayhem_augment.webp",
+    "href": "/zh-cn/augments/twice-thrice",
+    "tier": "prismatic",
+    "text": "51.22%接二连三"
+  },
+  {
+    "name": "升级：狂妄",
+    "image": "/augments/Upgrade_Hubris_mayhem_augment.webp",
+    "href": "/zh-cn/augments/upgrade-hubris",
+    "tier": "prismatic",
+    "text": "55.70%升级：狂妄"
+  },
+  {
+    "name": "升级：无尽之刃",
+    "image": "/augments/Upgrade_Infinity_Edge_mayhem_augment.webp",
+    "href": "/zh-cn/augments/upgrade-infinity-edge",
+    "tier": "prismatic",
+    "text": "54.93%升级：无尽之刃"
+  },
+  {
+    "name": "升级：耀光",
+    "image": "/augments/Upgrade_Sheen_mayhem_augment.webp",
+    "href": "/zh-cn/augments/upgrade-sheen",
+    "tier": "prismatic",
+    "text": "51.17%升级：耀光"
+  },
+  {
+    "name": "吸血习性",
+    "image": "/augments/Vampirism_mayhem_augment.webp",
+    "href": "/zh-cn/augments/vampirism",
+    "tier": "prismatic",
+    "text": "65.55%吸血习性"
+  },
+  {
+    "name": "易损",
+    "image": "/augments/Vulnerability_mayhem_augment.webp",
+    "href": "/zh-cn/augments/vulnerability",
+    "tier": "prismatic",
+    "text": "54.64%易损"
+  },
+  {
+    "name": "急急小子",
+    "image": "/augments/With_Haste_mayhem_augment.webp",
+    "href": "/zh-cn/augments/with-haste",
+    "tier": "prismatic",
+    "text": "49.75%急急小子"
+  },
+  {
+    "name": "坚若磐石",
+    "image": "/augments/Adamant_mayhem_augment.webp",
+    "href": "/zh-cn/augments/adamant",
+    "tier": "silver",
+    "text": "48.23%坚若磐石"
+  },
+  {
+    "name": "物理转魔法",
+    "image": "/augments/ADAPt_mayhem_augment.webp",
+    "href": "/zh-cn/augments/adapt",
+    "tier": "silver",
+    "text": "57.09%物理转魔法"
+  },
+  {
+    "name": "大力",
+    "image": "/augments/Blunt_Force_mayhem_augment.webp",
+    "href": "/zh-cn/augments/blunt-force",
+    "tier": "silver",
+    "text": "53.36%大力"
+  },
+  {
+    "name": "霸符兄弟",
+    "image": "/augments/Buff_Buddies_mayhem_augment.webp",
+    "href": "/zh-cn/augments/buff-buddies",
+    "tier": "silver",
+    "text": "55.12%霸符兄弟"
+  },
+  {
+    "name": "砸开那颗蛋",
+    "image": "/augments/Crack_Open_That_Egg_mayhem_augment.webp",
+    "href": "/zh-cn/augments/crack-open-that-egg",
+    "tier": "silver",
+    "text": "49.35%砸开那颗蛋"
+  },
+  {
+    "name": "由暴生急",
+    "image": "/augments/Crit_'n_Cast_mayhem_augment.webp",
+    "href": "/zh-cn/augments/crit-n-cast",
+    "tier": "silver",
+    "text": "47.80%由暴生急"
+  },
+  {
+    "name": "灵巧",
+    "image": "/augments/Deft_mayhem_augment.webp",
+    "href": "/zh-cn/augments/deft",
+    "tier": "silver",
+    "text": "57.45%灵巧"
+  },
+  {
+    "name": "俯冲轰炸",
+    "image": "/augments/Dive_Bomber_mayhem_augment.webp",
+    "href": "/zh-cn/augments/dive-bomber",
+    "tier": "silver",
+    "text": "55.24%俯冲轰炸"
+  },
+  {
+    "name": "唯快不破",
+    "image": "/augments/Don't_Blink_mayhem_augment.webp",
+    "href": "/zh-cn/augments/dont-blink",
+    "tier": "silver",
+    "text": "51.60%唯快不破"
+  },
+  {
+    "name": "侵蚀",
+    "image": "/augments/Erosion_mayhem_augment.webp",
+    "href": "/zh-cn/augments/erosion",
+    "tier": "silver",
+    "text": "52.05%侵蚀"
+  },
+  {
+    "name": "魔法转物理",
+    "image": "/augments/escAPADe_mayhem_augment.webp",
+    "href": "/zh-cn/augments/escapade",
+    "tier": "silver",
+    "text": "54.60%魔法转物理"
+  },
+  {
+    "name": "逃跑计划",
+    "image": "/augments/Escape_Plan_mayhem_augment.webp",
+    "href": "/zh-cn/augments/escape-plan",
+    "tier": "silver",
+    "text": "55.60%逃跑计划"
+  },
+  {
+    "name": "火狐",
+    "image": "/augments/FireFox_mayhem_augment.webp",
+    "href": "/zh-cn/augments/firefox",
+    "tier": "silver",
+    "text": "53.97%火狐"
+  },
+  {
+    "name": "急救用具",
+    "image": "/augments/First-Aid_Kit_mayhem_augment.webp",
+    "href": "/zh-cn/augments/first-aid-kit",
+    "tier": "silver",
+    "text": "50.88%急救用具"
+  },
+  {
+    "name": "闪闪现现",
+    "image": "/augments/Flash_2_mayhem_augment.webp",
+    "href": "/zh-cn/augments/flash-2",
+    "tier": "silver",
+    "text": "46.84%闪闪现现"
+  },
+  {
+    "name": "闪光弹",
+    "image": "/augments/Flashbang_mayhem_augment.webp",
+    "href": "/zh-cn/augments/flashbang",
+    "tier": "silver",
+    "text": "48.07%闪光弹"
+  },
+  {
+    "name": "冰霜 幽灵",
+    "image": "/augments/Frost_Wraith_mayhem_augment.webp",
+    "href": "/zh-cn/augments/frost-wraith",
+    "tier": "silver",
+    "text": "50.49%冰霜 幽灵"
+  },
+  {
+    "name": "渴血",
+    "image": "/augments/Goredrink_mayhem_augment.webp",
+    "href": "/zh-cn/augments/goredrink",
+    "tier": "silver",
+    "text": "59.35%渴血"
+  },
+  {
+    "name": "恶趣味",
+    "image": "/augments/Guilty_Pleasure_mayhem_augment.webp",
+    "href": "/zh-cn/augments/guilty-pleasure",
+    "tier": "silver",
+    "text": "51.18%恶趣味"
+  },
+  {
+    "name": "帽上加帽",
+    "image": "/augments/Hat_on_a_Hat_mayhem_augment.webp",
+    "href": "/zh-cn/augments/hat-on-a-hat",
+    "tier": "silver",
+    "text": "52.30%帽上加帽"
+  },
+  {
+    "name": "重量级打击手",
+    "image": "/augments/Heavy_Hitter_mayhem_augment.webp",
+    "href": "/zh-cn/augments/heavy-hitter",
+    "tier": "silver",
+    "text": "57.61%重量级打击手"
+  },
+  {
+    "name": "海克斯科技龙魂",
+    "image": "/augments/Hextech_Soul_mayhem_augment.webp",
+    "href": "/zh-cn/augments/hextech-soul",
+    "tier": "silver",
+    "text": "50.19%海克斯科技龙魂"
+  },
+  {
+    "name": "家园卫士",
+    "image": "/augments/Homeguard_mayhem_augment.webp",
+    "href": "/zh-cn/augments/homeguard",
+    "tier": "silver",
+    "text": "53.30%家园卫士"
+  },
+  {
+    "name": "冰寒",
+    "image": "/augments/Ice_Cold_mayhem_augment.webp",
+    "href": "/zh-cn/augments/ice-cold",
+    "tier": "silver",
+    "text": "53.92%冰寒"
+  },
+  {
+    "name": "炼狱龙魂",
+    "image": "/augments/Infernal_Soul_mayhem_augment.webp",
+    "href": "/zh-cn/augments/infernal-soul",
+    "tier": "silver",
+    "text": "51.06%炼狱龙魂"
+  },
+  {
+    "name": "注魔",
+    "image": "/augments/Juiced_mayhem_augment.webp",
+    "href": "/zh-cn/augments/juiced",
+    "tier": "silver",
+    "text": "49.93%注魔"
+  },
+  {
+    "name": "杀意翻涌",
+    "image": "/augments/Kill_Secured_mayhem_augment.webp",
+    "href": "/zh-cn/augments/kill-secured",
+    "tier": "silver",
+    "text": "49.45%杀意翻涌"
+  },
+  {
+    "name": "练腿日",
+    "image": "/augments/Leg_Day_mayhem_augment.webp",
+    "href": "/zh-cn/augments/leg-day",
+    "tier": "silver",
+    "text": "52.11%练腿日"
+  },
+  {
+    "name": "点亮他们！",
+    "image": "/augments/Light_'em_Up!_mayhem_augment.webp",
+    "href": "/zh-cn/augments/light-em-up",
+    "tier": "silver",
+    "text": "54.83%点亮他们！"
+  },
+  {
+    "name": "强力护盾",
+    "image": "/augments/Mighty_Shield_mayhem_augment.webp",
+    "href": "/zh-cn/augments/mighty-shield",
+    "tier": "silver",
+    "text": "47.80%强力护盾"
+  },
+  {
+    "name": "由心及物",
+    "image": "/augments/Mind_to_Matter_mayhem_augment.webp",
+    "href": "/zh-cn/augments/mind-to-matter",
+    "tier": "silver",
+    "text": "56.64%由心及物"
+  },
+  {
+    "name": "山脉龙魂",
+    "image": "/augments/MountainSoul_mayhem_augment.webp",
+    "href": "/zh-cn/augments/mountainsoul",
+    "tier": "silver",
+    "text": "48.70%山脉龙魂"
+  },
+  {
+    "name": "海洋龙魂",
+    "image": "/augments/Ocean_Soul_mayhem_augment.webp",
+    "href": "/zh-cn/augments/ocean-soul",
+    "tier": "silver",
+    "text": "54.67%海洋龙魂"
+  },
+  {
+    "name": "吵闹鬼",
+    "image": "/augments/Poltergeist_mayhem_augment.webp",
+    "href": "/zh-cn/augments/poltergeist",
+    "tier": "silver",
+    "text": "47.57%吵闹鬼"
+  },
+  {
+    "name": "纯粹主义者 - 术师",
+    "image": "/augments/Purist_-_Caster_mayhem_augment.webp",
+    "href": "/zh-cn/augments/purist-caster",
+    "tier": "silver",
+    "text": "48.58%纯粹主义者 - 术师"
+  },
+  {
+    "name": "退敌力场",
+    "image": "/augments/Repulsor_mayhem_augment.webp",
+    "href": "/zh-cn/augments/repulsor",
+    "tier": "silver",
+    "text": "46.36%退敌力场"
+  },
+  {
+    "name": "万用瞄准镜",
+    "image": "/augments/Scoped_Weapons_mayhem_augment.webp",
+    "href": "/zh-cn/augments/scoped-weapons",
+    "tier": "silver",
+    "text": "51.74%万用瞄准镜"
+  },
+  {
+    "name": "自我毁灭",
+    "image": "/augments/Self_Destruct_mayhem_augment.webp",
+    "href": "/zh-cn/augments/self-destruct",
+    "tier": "silver",
+    "text": "51.85%自我毁灭"
+  },
+  {
+    "name": "暗影疾奔",
+    "image": "/augments/Shadow_Runner_mayhem_augment.webp",
+    "href": "/zh-cn/augments/shadow-runner",
+    "tier": "silver",
+    "text": "55.42%暗影疾奔"
+  },
+  {
+    "name": "扇巴掌",
+    "image": "/augments/Slap_Around_mayhem_augment.webp",
+    "href": "/zh-cn/augments/slap-around",
+    "tier": "silver",
+    "text": "63.09%扇巴掌"
+  },
+  {
+    "name": "天音爆",
+    "image": "/augments/Sonic_Boom_mayhem_augment.webp",
+    "href": "/zh-cn/augments/sonic-boom",
+    "tier": "silver",
+    "text": "50.23%天音爆"
+  },
+  {
+    "name": "速度恶魔",
+    "image": "/augments/Speed_Demon_mayhem_augment.webp",
+    "href": "/zh-cn/augments/speed-demon",
+    "tier": "silver",
+    "text": "54.25%速度恶魔"
+  },
+  {
+    "name": "转得我眩晕了",
+    "image": "/augments/Spin_Me_Right_Round_mayhem_augment.webp",
+    "href": "/zh-cn/augments/spin-me-right-round",
+    "tier": "silver",
+    "text": "44.82%转得我眩晕了"
+  },
+  {
+    "name": "旋转至胜",
+    "image": "/augments/Spin_To_Win_mayhem_augment.webp",
+    "href": "/zh-cn/augments/spin-to-win",
+    "tier": "silver",
+    "text": "51.21%旋转至胜"
+  },
+  {
+    "name": "叠角龙",
+    "image": "/augments/StackosaurusRex_mayhem_augment.webp",
+    "href": "/zh-cn/augments/stackosaurusrex",
+    "tier": "silver",
+    "text": "52.68%叠角龙"
+  },
+  {
+    "name": "属性！",
+    "image": "/augments/Stats!_mayhem_augment.webp",
+    "href": "/zh-cn/augments/stats",
+    "tier": "silver",
+    "text": "59.80%属性！"
+  },
+  {
+    "name": "快中求稳",
+    "image": "/augments/Swift_and_Safe_mayhem_augment.webp",
+    "href": "/zh-cn/augments/swift-and-safe",
+    "tier": "silver",
+    "text": "54.00%快中求稳"
+  },
+  {
+    "name": "会心防御",
+    "image": "/augments/Tank_It_Or_Leave_It_mayhem_augment.webp",
+    "href": "/zh-cn/augments/tank-it-or-leave-it",
+    "tier": "silver",
+    "text": "52.76%会心防御"
+  },
+  {
+    "name": "残暴之力",
+    "image": "/augments/The_Brutalizer_mayhem_augment.webp",
+    "href": "/zh-cn/augments/the-brutalizer",
+    "tier": "silver",
+    "text": "50.32%残暴之力"
+  },
+  {
+    "name": "折磨者",
+    "image": "/augments/Tormentor_mayhem_augment.webp",
+    "href": "/zh-cn/augments/tormentor",
+    "tier": "silver",
+    "text": "48.95%折磨者"
+  },
+  {
+    "name": "双生火焰",
+    "image": "/augments/Twin_Fire_mayhem_augment.webp",
+    "href": "/zh-cn/augments/twin-fire",
+    "tier": "silver",
+    "text": "54.13%双生火焰"
+  },
+  {
+    "name": "台风",
+    "image": "/augments/Typhoon_mayhem_augment.webp",
+    "href": "/zh-cn/augments/typhoon",
+    "tier": "silver",
+    "text": "54.23%台风"
+  },
+  {
+    "name": "终极不可阻挡",
+    "image": "/augments/Ultimate_Unstoppable_mayhem_augment.webp",
+    "href": "/zh-cn/augments/ultimate-unstoppable",
+    "tier": "silver",
+    "text": "48.01%终极不可阻挡"
+  },
+  {
+    "name": "升级：收集者",
+    "image": "/augments/Upgrade_Collector_mayhem_augment.webp",
+    "href": "/zh-cn/augments/upgrade-collector",
+    "tier": "silver",
+    "text": "55.79%升级：收集者"
+  },
+  {
+    "name": "升级：弯刀",
+    "image": "/augments/Upgrade_Cutlass_mayhem_augment.webp",
+    "href": "/zh-cn/augments/upgrade-cutlass",
+    "tier": "silver",
+    "text": "43.76%升级：弯刀"
+  },
+  {
+    "name": "升级：献祭",
+    "image": "/augments/Upgrade_Immolate_mayhem_augment.webp",
+    "href": "/zh-cn/augments/upgrade-immolate",
+    "tier": "silver",
+    "text": "53.42%升级：献祭"
+  },
+  {
+    "name": "升级：荆棘之甲",
+    "image": "/augments/Upgrade_Thornmail_mayhem_augment.webp",
+    "href": "/zh-cn/augments/upgrade-thornmail",
+    "tier": "silver",
+    "text": "55.28%升级：荆棘之甲"
+  },
+  {
+    "name": "升级：中娅",
+    "image": "/augments/Upgrade_Zhonya's_mayhem_augment.webp",
+    "href": "/zh-cn/augments/upgrade-zhonyas",
+    "tier": "silver",
+    "text": "53.11%升级：中娅"
+  },
+  {
+    "name": "负重爆气",
+    "image": "/augments/Weighted_Popoffs_mayhem_augment.webp",
+    "href": "/zh-cn/augments/weighted-popoffs",
+    "tier": "silver",
+    "text": "55.14%负重爆气"
+  },
+  {
+    "name": "刃下生风",
+    "image": "/augments/Wind_Beneath_Blade_mayhem_augment.webp",
+    "href": "/zh-cn/augments/wind-beneath-blade",
+    "tier": "silver",
+    "text": "49.72%刃下生风"
+  },
+  {
+    "name": "巫师式思考",
+    "image": "/augments/Witchful_Thinking_mayhem_augment.webp",
+    "href": "/zh-cn/augments/witchful-thinking",
+    "tier": "silver",
+    "text": "54.39%巫师式思考"
+  },
+  {
+    "name": "狂热者",
+    "image": "/augments/Zealot_mayhem_augment.webp",
+    "href": "/zh-cn/augments/zealot",
+    "tier": "silver",
+    "text": "53.24%狂热者"
+  }
+]

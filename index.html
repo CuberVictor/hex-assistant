@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>海克斯大乱斗助手</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- 顶部导航 -->
+  <nav class="top-nav">
+    <div class="nav-brand">🎮 海克斯大乱斗助手</div>
+    <div class="nav-links">
+      <a href="#" class="nav-link active" data-page="assistant">助手</a>
+      <a href="#" class="nav-link" data-page="codex">图鉴</a>
+    </div>
+    <button id="config-btn" class="config-btn">⚙️ 设置</button>
+  </nav>
+
+  <div class="container">
+    <!-- 助手页面 -->
+    <div id="page-assistant" class="page active">
+      <!-- 选择信息 -->
+      <div class="selection-info">
+        <div class="selection-item" id="selected-hero">
+          <span class="selection-label">当前英雄：</span>
+          <span class="selection-placeholder">请点击选择英雄</span>
+        </div>
+        <div class="selection-item" id="selected-augments">
+          <span class="selection-label">已选海克斯：</span>
+          <span class="selection-placeholder">请点击选择拥有的海克斯</span>
+        </div>
+      </div>
+
+      <!-- 英雄选择 -->
+      <section class="section">
+        <div class="section-header">
+          <h2 class="section-title">🏹 选择英雄</h2>
+          <div class="search-box">
+            <input type="text" id="hero-search" placeholder="搜索英雄..." class="search-input">
+            <span id="hero-count" class="count-badge"></span>
+          </div>
+        </div>
+        <div id="hero-tabs" class="tabs-container"></div>
+        <div id="hero-grid" class="hero-grid"></div>
+      </section>
+
+      <!-- 海克斯选择 -->
+      <section class="section">
+        <div class="section-header">
+          <h2 class="section-title">💎 选择海克斯强化</h2>
+          <div class="search-box">
+            <input type="text" id="augment-search" placeholder="搜索海克斯..." class="search-input">
+            <span id="augment-count" class="count-badge"></span>
+          </div>
+        </div>
+        <div id="augment-tabs" class="tabs-container"></div>
+        <div id="augment-grid"></div>
+      </section>
+
+      <!-- 推荐按钮 -->
+      <section class="recommend-section">
+        <button id="recommend-btn" class="recommend-btn" disabled>获取推荐</button>
+      </section>
+
+      <!-- 加载状态 -->
+      <div id="loading" class="loading">
+        <div class="loading-spinner"></div>
+        <span class="loading-text">AI 正在分析中...</span>
+      </div>
+
+      <!-- 对话框区域 -->
+      <section class="chat-section">
+        <div class="chat-header">
+          <h2 class="section-title">💬 AI 助手对话</h2>
+        </div>
+        <div id="chat-area" class="chat-area">
+          <div id="chat-messages" class="chat-messages">
+            <div class="chat-message system">
+              <div class="message-avatar">🤖</div>
+              <div class="message-content">你好！我是海克斯大乱斗 AI 助手。请先选择英雄和海克斯，然后点击"获取推荐"按钮，我会为你分析最佳选择。你也可以直接在这里问我问题！</div>
+            </div>
+          </div>
+          <div class="chat-input-area">
+            <input type="text" id="chat-input" placeholder="输入消息..." class="chat-input">
+            <button id="chat-send" class="chat-send">发送</button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- 图鉴页面 -->
+    <div id="page-codex" class="page">
+      <!-- 图鉴类型切换 -->
+      <div class="codex-type-tabs">
+        <button class="codex-type-btn active" data-type="augments">💎 海克斯图鉴</button>
+        <button class="codex-type-btn" data-type="heroes">🏹 英雄图鉴</button>
+      </div>
+
+      <!-- 海克斯图鉴 -->
+      <div id="codex-augments" class="codex-section active">
+        <div class="codex-header">
+          <div class="search-box">
+            <input type="text" id="codex-search" placeholder="搜索海克斯..." class="search-input">
+            <span id="codex-count" class="count-badge"></span>
+          </div>
+        </div>
+        <div id="codex-tabs" class="tabs-container">
+          <button class="tab-btn active" data-tier="all">
+            <span class="tab-dot" style="background: #00d4ff"></span>
+            <span class="tab-name">全部</span>
+          </button>
+          <button class="tab-btn" data-tier="prismatic">
+            <span class="tab-dot" style="background: #FF69B4"></span>
+            <span class="tab-name">棱彩</span>
+          </button>
+          <button class="tab-btn" data-tier="gold">
+            <span class="tab-dot" style="background: #FFD700"></span>
+            <span class="tab-name">金色</span>
+          </button>
+          <button class="tab-btn" data-tier="silver">
+            <span class="tab-dot" style="background: #C0C0C0"></span>
+            <span class="tab-name">银色</span>
+          </button>
+        </div>
+        <div id="codex-grid" class="codex-grid"></div>
+      </div>
+
+      <!-- 英雄图鉴 -->
+      <div id="codex-heroes" class="codex-section">
+        <div class="codex-header">
+          <div class="search-box">
+            <input type="text" id="hero-codex-search" placeholder="搜索英雄..." class="search-input">
+            <span id="hero-codex-count" class="count-badge"></span>
+          </div>
+        </div>
+        <div id="hero-codex-tabs" class="tabs-container">
+          <button class="tab-btn active" data-role="all">📋 全部</button>
+          <button class="tab-btn" data-role="战士">⚔️ 战士</button>
+          <button class="tab-btn" data-role="法师">🔮 法师</button>
+          <button class="tab-btn" data-role="射手">🏹 射手</button>
+          <button class="tab-btn" data-role="坦克">🛡️ 坦克</button>
+          <button class="tab-btn" data-role="辅助">💚 辅助</button>
+          <button class="tab-btn" data-role="刺客">🗡️ 刺客</button>
+        </div>
+        <div id="hero-codex-grid" class="codex-grid"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 详情弹窗 -->
+  <div id="detail-modal" class="modal">
+    <div class="modal-content detail-modal-content">
+      <button class="modal-close" id="detail-close">&times;</button>
+      <div id="detail-body"></div>
+    </div>
+  </div>
+
+  <!-- 配置弹窗 -->
+  <div id="config-modal" class="modal">
+    <div class="modal-content">
+      <h2 class="modal-title">⚙️ API 配置</h2>
+      <div class="form-group">
+        <label for="api-key-input">Coze API Key</label>
+        <input type="password" id="api-key-input" placeholder="请输入你的 API Key">
+      </div>
+      <div class="form-group">
+        <label for="bot-id-input">Bot ID</label>
+        <input type="text" id="bot-id-input" placeholder="请输入你的 Bot ID">
+      </div>
+      <div class="modal-buttons">
+        <button id="close-config-btn" class="btn btn-secondary">取消</button>
+        <button id="save-config-btn" class="btn btn-primary">保存</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 引入 JS 文件 -->
+  <script src="js/data.js"></script>
+  <script src="js/ai.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/codex.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
