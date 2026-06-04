@@ -14,6 +14,7 @@
       <a href="#" class="nav-link active" data-page="assistant">助手</a>
       <a href="#" class="nav-link" data-page="codex">图鉴</a>
     </div>
+    <button id="config-btn" class="config-btn">⚙️ 设置</button>
   </nav>
 
   <div class="container">
@@ -152,6 +153,31 @@
     <div class="modal-content detail-modal-content">
       <button class="modal-close" id="detail-close">&times;</button>
       <div id="detail-body"></div>
+    </div>
+  </div>
+
+  <!-- 配置弹窗 -->
+  <div id="config-modal" class="modal">
+    <div class="modal-content">
+      <h2 class="modal-title">⚙️ API 配置</h2>
+      <div class="form-group">
+        <label for="api-key-input">Coze API Key</label>
+        <input type="password" id="api-key-input" placeholder="请输入你的 API Key">
+      </div>
+      <div class="form-group">
+        <label for="bot-id-input">Bot ID</label>
+        <input type="text" id="bot-id-input" placeholder="请输入你的 Bot ID">
+      </div>
+      <div class="form-group">
+        <label class="checkbox-label">
+          <input type="checkbox" id="remember-config" checked>
+          <span>记住配置（保存到浏览器本地）</span>
+        </label>
+      </div>
+      <div class="modal-buttons">
+        <button id="close-config-btn" class="btn btn-secondary">取消</button>
+        <button id="save-config-btn" class="btn btn-primary">保存</button>
+      </div>
     </div>
   </div>
 
