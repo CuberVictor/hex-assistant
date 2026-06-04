@@ -16,7 +16,6 @@ class App {
     uiManager.onAugmentTabChange = () => this.render();
     this.render();
     this.bindEvents();
-    this.checkConfig();
   }
 
   // 渲染界面
@@ -37,15 +36,6 @@ class App {
   // 绑定事件
   bindEvents() {
     uiManager.elements.recommendBtn.addEventListener('click', () => this.getRecommendation());
-    uiManager.elements.configBtn.addEventListener('click', () => uiManager.showConfigModal());
-    uiManager.elements.saveConfigBtn.addEventListener('click', () => this.saveConfig());
-    uiManager.elements.closeConfigBtn.addEventListener('click', () => uiManager.hideConfigModal());
-
-    uiManager.elements.configModal.addEventListener('click', (e) => {
-      if (e.target === uiManager.elements.configModal) {
-        uiManager.hideConfigModal();
-      }
-    });
 
     if (uiManager.elements.heroSearch) {
       uiManager.elements.heroSearch.addEventListener('input', (e) => {
@@ -86,31 +76,14 @@ class App {
 
   // 切换页面
   switchPage(page) {
-    // 更新导航状态
     document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
     document.querySelector(`.nav-link[data-page="${page}"]`).classList.add('active');
 
-    // 更新页面显示
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
     document.getElementById(`page-${page}`).classList.add('active');
 
-    // 如果切换到图鉴，初始化图鉴
     if (page === 'codex') {
       codexManager.init();
-    }
-  }
-
-  // 检查配置
-  checkConfig() {
-    const configSaved = localStorage.getItem('cozeConfigSaved');
-    if (!aiManager.isConfigured() && !configSaved) {
-      setTimeout(() => {
-        uiManager.showConfigModal();
-      }, 500);
-    } else if (configSaved) {
-      // 从 localStorage 加载配置
-      aiManager.apiKey = localStorage.getItem('cozeApiKey') || '';
-      aiManager.botId = localStorage.getItem('cozeBotId') || '';
     }
   }
 
@@ -131,42 +104,10 @@ class App {
     this.render();
   }
 
-  // 保存配置
-  saveConfig() {
-    const apiKey = uiManager.elements.apiKeyInput.value.trim();
-    const botId = uiManager.elements.botIdInput.value.trim();
-    const remember = document.getElementById('remember-config').checked;
-
-    if (!apiKey || !botId) {
-      alert('请输入 API Key 和 Bot ID');
-      return;
-    }
-
-    // 保存到内存
-    aiManager.apiKey = apiKey;
-    aiManager.botId = botId;
-
-    // 如果勾选记住，保存到 localStorage
-    if (remember) {
-      localStorage.setItem('cozeApiKey', apiKey);
-      localStorage.setItem('cozeBotId', botId);
-      localStorage.setItem('cozeConfigSaved', 'true');
-    } else {
-      localStorage.removeItem('cozeApiKey');
-      localStorage.removeItem('cozeBotId');
-      localStorage.removeItem('cozeConfigSaved');
-    }
-
-    uiManager.hideConfigModal();
-    uiManager.addMessage('system', '✅ 配置已保存');
-    this.render();
-  }
-
-  // 构建提示词（用于传递选择信息给智能体）
+  // 构建提示词
   buildPrompt(hero, selectedAugments, userMessage = '') {
     let prompt = '';
 
-    // 添加英雄信息
     if (hero) {
       prompt += `当前英雄：${hero.name}（${hero.tags.join('、')}）`;
       if (hero.winrate) {
@@ -175,7 +116,6 @@ class App {
       prompt += '\n';
     }
 
-    // 添加海克斯信息
     if (selectedAugments.length > 0) {
       prompt += '\n玩家拥有的海克斯强化：\n';
       selectedAugments.forEach(a => {
@@ -188,7 +128,6 @@ class App {
       });
     }
 
-    // 添加用户消息
     if (userMessage) {
       prompt += `\n用户问题：${userMessage}`;
     } else {
@@ -210,13 +149,6 @@ class App {
       return;
     }
 
-    if (!aiManager.isConfigured()) {
-      uiManager.addMessage('system', '⚠️ 请先配置 API Key 和 Bot ID');
-      uiManager.showConfigModal();
-      return;
-    }
-
-    // 构建用户消息显示
     const augmentNames = selectedAugments.map(a => a.name).join('、');
     uiManager.addMessage('user', `请为 <strong>${selectedHero.name}</strong> 推荐海克斯选择<br>已选海克斯：${augmentNames}`);
 
@@ -224,17 +156,12 @@ class App {
     uiManager.showLoading(true);
     uiManager.updateRecommendButton(true, true);
 
-    // 添加加载消息
     const loadingMsgId = uiManager.addMessage('system', '⏳ 正在分析中，请稍候...');
 
     try {
-      // 构建完整的提示词
       const prompt = this.buildPrompt(selectedHero, selectedAugments);
-
-      // 调用 AI API
       const result = await aiManager.chat(prompt);
 
-      // 移除加载消息，显示结果
       uiManager.removeMessage(loadingMsgId);
       uiManager.addMessage('assistant', result.replace(/\n/g, '<br>'));
     } catch (error) {
@@ -255,16 +182,7 @@ class App {
     if (!message) return;
     if (this.state.isLoading) return;
 
-    if (!aiManager.isConfigured()) {
-      uiManager.addMessage('system', '⚠️ 请先配置 API Key 和 Bot ID');
-      uiManager.showConfigModal();
-      return;
-    }
-
-    // 清空输入框
     input.value = '';
-
-    // 添加用户消息
     uiManager.addMessage('user', message);
 
     this.state.isLoading = true;
@@ -274,71 +192,10 @@ class App {
       const selectedHero = champions.find(c => c.id === this.state.selectedHeroId);
       const selectedAugments = hexAugments.filter(a => this.state.selectedAugmentIds.includes(a.id));
 
-      // 构建提示词，包含选择信息
       const prompt = this.buildPrompt(selectedHero, selectedAugments, message);
-
-      // 调用 AI
       const result = await aiManager.chat(prompt);
 
-      // 显示回复
       uiManager.addMessage('assistant', result.replace(/\n/g, '<br>'));
-    } catch (error) {
-      uiManager.addMessage('system', `❌ ${error.message || '发送失败，请重试'}`);
-    } finally {
-      this.state.isLoading = false;
-      uiManager.showLoading(false);
-    }
-  }
-
-  // 发送消息
-  async sendMessage() {
-    const input = uiManager.elements.chatInput;
-    const message = input.value.trim();
-
-    if (!message) return;
-    if (this.state.isLoading) return;
-
-    if (!aiManager.isConfigured()) {
-      uiManager.addMessage('system', '⚠️ 请先配置 API Key 和 Bot ID');
-      uiManager.showConfigModal();
-      return;
-    }
-
-    // 清空输入框
-    input.value = '';
-
-    // 添加用户消息
-    uiManager.addMessage('user', message);
-
-    this.state.isLoading = true;
-    uiManager.showLoading(true);
-
-    try {
-      const selectedHero = champions.find(c => c.id === this.state.selectedHeroId);
-      const selectedAugments = hexAugments.filter(a => this.state.selectedAugmentIds.includes(a.id));
-
-      // 构建提示词，包含选择信息
-      const prompt = this.buildPrompt(selectedHero, selectedAugments, message);
-
-      // 调用 AI
-      const result = await aiManager.getRecommendation(selectedHero || { name: '未选择', tags: [] }, selectedAugments);
-
-      // 显示回复
-      let response = '';
-      if (result.recommendations && result.recommendations.length > 0) {
-        result.recommendations.forEach((rec, index) => {
-          const medal = index === 0 ? '🥇' : index === 1 ? '🥈' : '🥉';
-          response += `${medal} **${rec.augment}**：${rec.reason}\n\n`;
-        });
-      }
-      if (result.analysis) {
-        response += result.analysis;
-      }
-      if (!response) {
-        response = typeof result === 'string' ? result : JSON.stringify(result);
-      }
-
-      uiManager.addMessage('assistant', response.replace(/\n/g, '<br>'));
     } catch (error) {
       uiManager.addMessage('system', `❌ ${error.message || '发送失败，请重试'}`);
     } finally {

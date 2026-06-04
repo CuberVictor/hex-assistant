@@ -24,12 +24,6 @@ class UIManager {
       chatInput: document.getElementById('chat-input'),
       chatSend: document.getElementById('chat-send'),
       loading: document.getElementById('loading'),
-      configBtn: document.getElementById('config-btn'),
-      configModal: document.getElementById('config-modal'),
-      apiKeyInput: document.getElementById('api-key-input'),
-      botIdInput: document.getElementById('bot-id-input'),
-      saveConfigBtn: document.getElementById('save-config-btn'),
-      closeConfigBtn: document.getElementById('close-config-btn'),
       heroSearch: document.getElementById('hero-search'),
       augmentSearch: document.getElementById('augment-search'),
       heroCount: document.getElementById('hero-count'),
@@ -266,29 +260,6 @@ class UIManager {
   // 显示加载状态
   showLoading(show) {
     this.elements.loading.style.display = show ? 'flex' : 'none';
-  }
-
-  // 显示配置弹窗
-  showConfigModal() {
-    // 从 localStorage 或内存加载配置
-    const apiKey = localStorage.getItem('cozeApiKey') || aiManager.apiKey;
-    const botId = localStorage.getItem('cozeBotId') || aiManager.botId;
-
-    this.elements.apiKeyInput.value = apiKey;
-    this.elements.botIdInput.value = botId;
-
-    // 设置记住勾选框状态
-    const rememberCheckbox = document.getElementById('remember-config');
-    if (rememberCheckbox) {
-      rememberCheckbox.checked = !!localStorage.getItem('cozeConfigSaved');
-    }
-
-    this.elements.configModal.style.display = 'flex';
-  }
-
-  // 隐藏配置弹窗
-  hideConfigModal() {
-    this.elements.configModal.style.display = 'none';
   }
 }
 
