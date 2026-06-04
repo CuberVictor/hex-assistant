@@ -1,25 +1,33 @@
-// Vercel Serverless Function - Coze API 代理
-// Token 存在 Vercel 环境变量中，前端看不到
+// EdgeOne Pages Function - Coze API 代理
 
-export default async function handler(req, res) {
+export default async function fetch(request) {
   // 只允许 POST 请求
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
+  if (request.method !== 'POST') {
+    return new Response(JSON.stringify({ error: 'Method not allowed' }), {
+      status: 405,
+      headers: { 'Content-Type': 'application/json' }
+    });
   }
 
   // 从环境变量获取配置
-  const API_KEY = process.env.COZE_API_KEY;
-  const BOT_ID = process.env.COZE_BOT_ID;
+  const API_KEY = typeof COZE_API_KEY !== 'undefined' ? COZE_API_KEY : '';
+  const BOT_ID = typeof COZE_BOT_ID !== 'undefined' ? COZE_BOT_ID : '';
 
   if (!API_KEY || !BOT_ID) {
-    return res.status(500).json({ error: '服务器配置错误' });
+    return new Response(JSON.stringify({ error: '服务器配置错误' }), {
+      status: 500,
+      headers: { 'Content-Type': 'application/json' }
+    });
   }
 
   try {
-    const { prompt } = req.body;
+    const { prompt } = await request.json();
 
     if (!prompt) {
-      return res.status(400).json({ error: '缺少 prompt 参数' });
+      return new Response(JSON.stringify({ error: '缺少 prompt 参数' }), {
+        status: 400,
+        headers: { 'Content-Type': 'application/json' }
+      });
     }
 
     // 调用 Coze API
@@ -46,13 +54,19 @@ export default async function handler(req, res) {
 
     if (!chatResponse.ok) {
       const error = await chatResponse.json().catch(() => ({}));
-      return res.status(chatResponse.status).json({ error: error.msg || 'Coze API 调用失败' });
+      return new Response(JSON.stringify({ error: error.msg || 'Coze API 调用失败' }), {
+        status: chatResponse.status,
+        headers: { 'Content-Type': 'application/json' }
+      });
     }
 
     const chatData = await chatResponse.json();
 
     if (chatData.code !== 0) {
-      return res.status(400).json({ error: chatData.msg || 'Coze API 错误' });
+      return new Response(JSON.stringify({ error: chatData.msg || 'Coze API 错误' }), {
+        status: 400,
+        headers: { 'Content-Type': 'application/json' }
+      });
     }
 
     const chatId = chatData.data?.id;
@@ -65,7 +79,10 @@ export default async function handler(req, res) {
 
     while (status === 'in_progress' || status === 'created') {
       if (attempts >= maxAttempts) {
-        return res.status(408).json({ error: '请求超时' });
+        return new Response(JSON.stringify({ error: '请求超时' }), {
+          status: 408,
+          headers: { 'Content-Type': 'application/json' }
+        });
       }
 
       await new Promise(resolve => setTimeout(resolve, 1000));
@@ -83,7 +100,10 @@ export default async function handler(req, res) {
     }
 
     if (status === 'failed') {
-      return res.status(500).json({ error: '对话失败' });
+      return new Response(JSON.stringify({ error: '对话失败' }), {
+        status: 500,
+        headers: { 'Content-Type': 'application/json' }
+      });
     }
 
     // 获取消息
@@ -93,7 +113,10 @@ export default async function handler(req, res) {
     );
 
     if (!messagesResponse.ok) {
-      return res.status(500).json({ error: '获取消息失败' });
+      return new Response(JSON.stringify({ error: '获取消息失败' }), {
+        status: 500,
+        headers: { 'Content-Type': 'application/json' }
+      });
     }
 
     const messagesData = await messagesResponse.json();
@@ -101,14 +124,23 @@ export default async function handler(req, res) {
     const assistantMessage = messages.find(m => m.role === 'assistant' && m.type === 'answer');
 
     if (!assistantMessage) {
-      return res.status(500).json({ error: '未获取到回复' });
+      return new Response(JSON.stringify({ error: '未获取到回复' }), {
+        status: 500,
+        headers: { 'Content-Type': 'application/json' }
+      });
     }
 
     // 返回结果
-    return res.status(200).json({ content: assistantMessage.content });
+    return new Response(JSON.stringify({ content: assistantMessage.content }), {
+      status: 200,
+      headers: { 'Content-Type': 'application/json' }
+    });
 
   } catch (error) {
     console.error('API Error:', error);
-    return res.status(500).json({ error: '服务器错误' });
+    return new Response(JSON.stringify({ error: '服务器错误' }), {
+      status: 500,
+      headers: { 'Content-Type': 'application/json' }
+    });
   }
 }
