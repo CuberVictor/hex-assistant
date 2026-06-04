@@ -102,10 +102,15 @@ class App {
 
   // 检查配置
   checkConfig() {
-    if (!aiManager.isConfigured()) {
+    const configSaved = localStorage.getItem('cozeConfigSaved');
+    if (!aiManager.isConfigured() && !configSaved) {
       setTimeout(() => {
         uiManager.showConfigModal();
       }, 500);
+    } else if (configSaved) {
+      // 从 localStorage 加载配置
+      aiManager.apiKey = localStorage.getItem('cozeApiKey') || '';
+      aiManager.botId = localStorage.getItem('cozeBotId') || '';
     }
   }
 
@@ -130,14 +135,30 @@ class App {
   saveConfig() {
     const apiKey = uiManager.elements.apiKeyInput.value.trim();
     const botId = uiManager.elements.botIdInput.value.trim();
+    const remember = document.getElementById('remember-config').checked;
 
     if (!apiKey || !botId) {
       alert('请输入 API Key 和 Bot ID');
       return;
     }
 
-    aiManager.saveConfig(apiKey, botId);
+    // 保存到内存
+    aiManager.apiKey = apiKey;
+    aiManager.botId = botId;
+
+    // 如果勾选记住，保存到 localStorage
+    if (remember) {
+      localStorage.setItem('cozeApiKey', apiKey);
+      localStorage.setItem('cozeBotId', botId);
+      localStorage.setItem('cozeConfigSaved', 'true');
+    } else {
+      localStorage.removeItem('cozeApiKey');
+      localStorage.removeItem('cozeBotId');
+      localStorage.removeItem('cozeConfigSaved');
+    }
+
     uiManager.hideConfigModal();
+    uiManager.addMessage('system', '✅ 配置已保存');
     this.render();
   }
 

@@ -270,8 +270,19 @@ class UIManager {
 
   // 显示配置弹窗
   showConfigModal() {
-    this.elements.apiKeyInput.value = aiManager.apiKey;
-    this.elements.botIdInput.value = aiManager.botId;
+    // 从 localStorage 或内存加载配置
+    const apiKey = localStorage.getItem('cozeApiKey') || aiManager.apiKey;
+    const botId = localStorage.getItem('cozeBotId') || aiManager.botId;
+
+    this.elements.apiKeyInput.value = apiKey;
+    this.elements.botIdInput.value = botId;
+
+    // 设置记住勾选框状态
+    const rememberCheckbox = document.getElementById('remember-config');
+    if (rememberCheckbox) {
+      rememberCheckbox.checked = !!localStorage.getItem('cozeConfigSaved');
+    }
+
     this.elements.configModal.style.display = 'flex';
   }
 
