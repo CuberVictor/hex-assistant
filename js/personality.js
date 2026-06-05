@@ -189,13 +189,13 @@ class PersonalityTest {
     console.log('=== PREVIEW GRID v4 ===');
     const grid = this.elements.previewGrid;
     grid.innerHTML = '';
-    grid.style.cssText = 'display:grid !important;grid-template-columns:repeat(6,100px) !important;gap:8px !important;justify-content:center !important;margin-top:16px;';
+    grid.style.cssText = 'display:grid !important;grid-template-columns:repeat(6,110px) !important;gap:10px !important;justify-content:center !important;margin-top:16px;';
     this.data.results.forEach(r => {
       const card = document.createElement('button');
       card.type = 'button';
       card.style.cssText = 'display:flex;flex-direction:column;align-items:center;gap:4px;padding:4px;border:1px solid rgba(255,255,255,0.08);border-radius:8px;background:rgba(255,255,255,0.03);cursor:pointer;';
       card.innerHTML = `
-        <img src="images/personality/${r.id}.webp" alt="${r.name}" style="width:92px;height:92px;border-radius:6px;object-fit:cover;" loading="lazy" decoding="async">
+        <img src="images/personality/${r.id}.webp" alt="${r.name}" style="width:100px;height:100px;border-radius:6px;object-fit:cover;" loading="lazy" decoding="async">
         <span style="font-size:11px;color:#aaa;text-align:center;width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${r.name}</span>
       `;
       card.addEventListener('click', () => this.showDetailModal(r));
