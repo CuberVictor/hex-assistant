@@ -22,7 +22,7 @@ export async function onRequestPost(context) {
       });
     }
 
-    // 调用 Coze API
+    // 调用 Coze API（每次独立对话，避免上下文冲突）
     const chatResponse = await fetch('https://api.coze.cn/v3/chat', {
       method: 'POST',
       headers: {
@@ -31,7 +31,7 @@ export async function onRequestPost(context) {
       },
       body: JSON.stringify({
         bot_id: BOT_ID,
-        user_id: 'web-user',
+        user_id: `web-${Date.now()}`,
         additional_messages: [
           {
             role: 'user',
@@ -40,7 +40,7 @@ export async function onRequestPost(context) {
           }
         ],
         stream: false,
-        auto_save_history: true
+        auto_save_history: false
       })
     });
 
@@ -92,7 +92,18 @@ export async function onRequestPost(context) {
     }
 
     if (status === 'failed') {
-      return new Response(JSON.stringify({ error: '对话失败' }), {
+      // 尝试获取错误详情
+      const errRes = await fetch(
+        `https://api.coze.cn/v3/chat/message/list?chat_id=${chatId}&conversation_id=${conversationId}`,
+        { headers: { 'Authorization': `Bearer ${API_KEY}` } }
+      ).catch(() => null);
+      let detail = '对话失败';
+      if (errRes?.ok) {
+        const errData = await errRes.json();
+        const errMsg = (errData.data || []).find(m => m.type === 'error');
+        if (errMsg?.content) detail = errMsg.content;
+      }
+      return new Response(JSON.stringify({ error: detail }), {
         status: 500,
         headers: { 'Content-Type': 'application/json' }
       });

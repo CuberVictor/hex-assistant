@@ -33,7 +33,7 @@ export default async function handler(req, res) {
       },
       body: JSON.stringify({
         bot_id: BOT_ID,
-        user_id: 'web-user',
+        user_id: `web-${Date.now()}`,
         additional_messages: [
           {
             role: 'user',
@@ -42,7 +42,7 @@ export default async function handler(req, res) {
           }
         ],
         stream: true,
-        auto_save_history: true
+        auto_save_history: false
       })
     });
 
@@ -91,7 +91,8 @@ export default async function handler(req, res) {
 
             // 处理错误
             if (eventType === 'conversation.chat.failed') {
-              res.write(`data: ${JSON.stringify({ error: '对话失败' })}\n\n`);
+              const errMsg = parsed.last_error?.msg || parsed.msg || '对话失败';
+              res.write(`data: ${JSON.stringify({ error: errMsg })}\n\n`);
               break;
             }
           } catch (e) {
