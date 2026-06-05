@@ -3,15 +3,21 @@
 class AIManager {
   constructor() {
     this.apiEndpoint = '/api/chat';
+    this.currentRequestId = null;
   }
 
   // 调用 AI（流式输出）
-  async chat(prompt, onChunk) {
+  async chat(prompt, onChunk, requestId) {
+    // 如果有新请求，标记旧请求应取消
+    this.currentRequestId = requestId || Date.now().toString();
+    const myId = this.currentRequestId;
+
     // 超时保护：60秒后强制结束
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 60000);
 
     try {
+      console.log(`[AI ${myId}] 发送请求`);
       const response = await fetch(this.apiEndpoint, {
         method: 'POST',
         headers: {
@@ -33,8 +39,18 @@ class AIManager {
       let buffer = '';
 
       while (true) {
+        // 如果已经有新请求，停止读取旧流
+        if (this.currentRequestId !== myId) {
+          console.log(`[AI ${myId}] 被新请求取消，释放reader`);
+          reader.releaseLock();
+          return fullContent;
+        }
+
         const { done, value } = await reader.read();
-        if (done) break;
+        if (done) {
+          console.log(`[AI ${myId}] 流结束，内容长度: ${fullContent.length}`);
+          break;
+        }
 
         buffer += decoder.decode(value, { stream: true });
         const lines = buffer.split('\n');
@@ -44,6 +60,7 @@ class AIManager {
           if (line.startsWith('data:')) {
             const data = line.slice(5).trim();
             if (data === '[DONE]') {
+              console.log(`[AI ${myId}] 收到[DONE]`);
               return fullContent;
             }
             try {
@@ -71,7 +88,7 @@ class AIManager {
       if (error.name === 'AbortError') {
         throw new Error('请求超时，请重试');
       }
-      console.error('AI 调用错误:', error);
+      console.error(`[AI ${myId}] 调用错误:`, error);
       throw error;
     } finally {
       clearTimeout(timeout);

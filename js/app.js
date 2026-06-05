@@ -150,7 +150,10 @@ class App {
 
   // 获取推荐（流式输出）
   async getRecommendation() {
-    if (this.state.isLoading) return;
+    if (this.state.isLoading) {
+      console.log('[getRecommendation] 正在加载中，跳过');
+      return;
+    }
 
     const selectedHero = champions.find(c => c.id === this.state.selectedHeroId);
     const selectedAugments = hexAugments.filter(a => this.state.selectedAugmentIds.includes(a.id));
@@ -169,19 +172,22 @@ class App {
 
     // 创建空的 assistant 消息用于流式更新
     const msgId = uiManager.addMessage('assistant', '⏳ 正在分析中...');
+    const requestId = 'rec-' + Date.now();
+    console.log(`[getRecommendation] 开始请求 ${requestId}, msgId=${msgId}`);
 
     try {
       const prompt = this.buildPrompt(selectedHero, selectedAugments);
 
       // 使用流式输出
       await aiManager.chat(prompt, (chunk, fullContent) => {
-        // 更新消息内容（打字机效果）
         uiManager.updateMessage(msgId, fullContent.replace(/\n/g, '<br>'));
-      });
+      }, requestId);
 
     } catch (error) {
+      console.error(`[getRecommendation] 错误:`, error);
       uiManager.updateMessage(msgId, `❌ ${error.message || '获取推荐失败，请重试'}`);
     } finally {
+      console.log(`[getRecommendation] 完成 ${requestId}, 重置isLoading`);
       this.state.isLoading = false;
       uiManager.showLoading(false);
       uiManager.updateRecommendButton(true, false);
@@ -195,7 +201,10 @@ class App {
     const message = input.value.trim();
 
     if (!message) return;
-    if (this.state.isLoading) return;
+    if (this.state.isLoading) {
+      console.log('[sendMessage] 正在加载中，跳过');
+      return;
+    }
 
     input.value = '';
     uiManager.addMessage('user', message);
@@ -205,6 +214,8 @@ class App {
 
     // 创建空的 assistant 消息用于流式更新
     const msgId = uiManager.addMessage('assistant', '⏳ 正在思考...');
+    const requestId = 'msg-' + Date.now();
+    console.log(`[sendMessage] 开始请求 ${requestId}, msgId=${msgId}`);
 
     try {
       const selectedHero = champions.find(c => c.id === this.state.selectedHeroId);
@@ -215,11 +226,13 @@ class App {
       // 使用流式输出
       await aiManager.chat(prompt, (chunk, fullContent) => {
         uiManager.updateMessage(msgId, fullContent.replace(/\n/g, '<br>'));
-      });
+      }, requestId);
 
     } catch (error) {
+      console.error(`[sendMessage] 错误:`, error);
       uiManager.updateMessage(msgId, `❌ ${error.message || '发送失败，请重试'}`);
     } finally {
+      console.log(`[sendMessage] 完成 ${requestId}, 重置isLoading`);
       this.state.isLoading = false;
       uiManager.showLoading(false);
       uiManager.updateRecommendButton(true, false);
