@@ -194,6 +194,22 @@ body {
   gap: 10px;
 }
 
+.clear-btn {
+  padding: 6px 12px;
+  background: rgba(255, 59, 48, 0.2);
+  border: 1px solid rgba(255, 59, 48, 0.3);
+  border-radius: 15px;
+  color: #ff6b6b;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.clear-btn:hover {
+  background: rgba(255, 59, 48, 0.3);
+  border-color: rgba(255, 59, 48, 0.5);
+}
+
 .search-input {
   padding: 8px 15px;
   background: rgba(255, 255, 255, 0.05);

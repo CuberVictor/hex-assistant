@@ -51,6 +51,15 @@ class App {
       });
     }
 
+    // 清除所有选中的海克斯
+    const clearBtn = document.getElementById('clear-augments');
+    if (clearBtn) {
+      clearBtn.addEventListener('click', () => {
+        this.state.selectedAugmentIds = [];
+        this.render();
+      });
+    }
+
     // 对话框发送
     if (uiManager.elements.chatSend) {
       uiManager.elements.chatSend.addEventListener('click', () => this.sendMessage());
