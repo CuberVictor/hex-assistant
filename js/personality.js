@@ -196,7 +196,7 @@ class PersonalityTest {
       card.style.cssText = 'display:flex;flex-direction:column;align-items:center;gap:4px;padding:4px;border:1px solid rgba(255,255,255,0.08);border-radius:8px;background:rgba(255,255,255,0.03);cursor:pointer;';
       card.innerHTML = `
         <img src="images/personality/${r.id}.webp" alt="${r.name}" style="width:140px;height:140px;border-radius:6px;object-fit:cover;" loading="lazy" decoding="async">
-        <span style="font-size:11px;color:#aaa;text-align:center;width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${r.name}</span>
+        <span style="font-size:13px;color:#bbb;text-align:center;width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${r.name}</span>
       `;
       card.addEventListener('click', () => this.showDetailModal(r));
       grid.appendChild(card);
