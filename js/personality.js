@@ -63,7 +63,7 @@ const PERSONALITY_DATA = {
       { "id": "a", "text": "闪现上去收，全收不了也要上", "weights": ["one-hp-forward", "kda-cleaner"] },
       { "id": "b", "text": "等技能CD，做个正常人", "weights": ["wave-civil-servant", "item-accountant"] },
       { "id": "c", "text": "ping队友，自己后撤", "weights": ["pressure-cooker", "question-mark-damage"] },
-      { "id": "d", "text": "被反杀后说"差一点"", "weights": ["mark-lottery", "fountain-loop"] }
+      { "id": "d", "text": "被反杀后说「差一点」", "weights": ["mark-lottery", "fountain-loop"] }
     ]},
     { "id": "a8", "text": "大乱斗你最不能忍的是？", "options": [
       { "id": "a", "text": "有人不打架", "weights": ["snowball-engager", "urf-hallucination"] },
@@ -89,7 +89,7 @@ const PERSONALITY_DATA = {
       { "id": "c", "text": "出魔抗，然后继续被打", "weights": ["modifier-victim", "item-accountant"] },
       { "id": "d", "text": "投降按钮是我的第六件装备", "weights": ["last-fight-liar", "fountain-loop"] }
     ]},
-    { "id": "a12", "text": "看到"问号能打伤害"这种东西？", "options": [
+    { "id": "a12", "text": "看到「问号能打伤害」这种东西？", "options": [
       { "id": "a", "text": "太艺术了，必须玩", "weights": ["question-mark-damage", "prismatic-preacher"] },
       { "id": "b", "text": "这游戏终于疯了", "weights": ["urf-hallucination", "modifier-victim"] },
       { "id": "c", "text": "我先看看数值", "weights": ["item-accountant", "modifier-victim"] },
@@ -101,17 +101,17 @@ const PERSONALITY_DATA = {
       { "id": "c", "text": "偷门差一刀", "weights": ["king-me-backdoor", "last-fight-liar"] },
       { "id": "d", "text": "活着但没用", "weights": ["kda-cleaner", "pressure-cooker"] }
     ]},
-    { "id": "a14", "text": "队友说"最后一波"？", "options": [
+    { "id": "a14", "text": "队友说「最后一波」？", "options": [
       { "id": "a", "text": "信了，结果还有五波", "weights": ["last-fight-liar", "fountain-loop"] },
       { "id": "b", "text": "不说话，买装备", "weights": ["item-accountant", "wave-civil-servant"] },
       { "id": "c", "text": "我先开，省得纠结", "weights": ["snowball-engager", "five-one-life"] },
       { "id": "d", "text": "最后一波？我刚复活", "weights": ["fountain-loop", "mark-lottery"] }
     ]},
     { "id": "a15", "text": "你最常被朋友怎么评价？", "options": [
-      { "id": "a", "text": ""你是真敢上"", "weights": ["snowball-engager", "one-hp-forward"] },
-      { "id": "b", "text": ""你是真能苟"", "weights": ["kda-cleaner", "bush-goblin"] },
-      { "id": "c", "text": ""你是真会偷"", "weights": ["king-me-backdoor", "bush-goblin"] },
-      { "id": "d", "text": ""你是真抽象"", "weights": ["question-mark-damage", "prismatic-gambler"] }
+      { "id": "a", "text": "「你是真敢上」", "weights": ["snowball-engager", "one-hp-forward"] },
+      { "id": "b", "text": "「你是真能苟」", "weights": ["kda-cleaner", "bush-goblin"] },
+      { "id": "c", "text": "「你是真会偷」", "weights": ["king-me-backdoor", "bush-goblin"] },
+      { "id": "d", "text": "「你是真抽象」", "weights": ["question-mark-damage", "prismatic-gambler"] }
     ]},
     { "id": "a16", "text": "你的大乱斗人生信条是？", "options": [
       { "id": "a", "text": "棱彩不赌，人生白过", "weights": ["prismatic-gambler", "prismatic-preacher"] },
