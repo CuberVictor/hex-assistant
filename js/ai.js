@@ -7,13 +7,18 @@ class AIManager {
 
   // 调用 AI（流式输出）
   async chat(prompt, onChunk) {
+    // 超时保护：60秒后强制结束
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 60000);
+
     try {
       const response = await fetch(this.apiEndpoint, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ prompt })
+        body: JSON.stringify({ prompt }),
+        signal: controller.signal
       });
 
       if (!response.ok) {
@@ -63,8 +68,13 @@ class AIManager {
 
       return fullContent;
     } catch (error) {
+      if (error.name === 'AbortError') {
+        throw new Error('请求超时，请重试');
+      }
       console.error('AI 调用错误:', error);
       throw error;
+    } finally {
+      clearTimeout(timeout);
     }
   }
 

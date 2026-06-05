@@ -184,6 +184,7 @@ class App {
     } finally {
       this.state.isLoading = false;
       uiManager.showLoading(false);
+      uiManager.updateRecommendButton(true, false);
       this.render();
     }
   }
@@ -221,6 +222,7 @@ class App {
     } finally {
       this.state.isLoading = false;
       uiManager.showLoading(false);
+      uiManager.updateRecommendButton(true, false);
     }
   }
 }
