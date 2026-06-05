@@ -14,15 +14,6 @@ class PersonalityTest {
 
   // 初始化
   async init() {
-    // 加载数据
-    try {
-      const resp = await fetch('personality_data.json');
-      this.data = await resp.json();
-    } catch (e) {
-      console.error('加载性格测试数据失败:', e);
-      return;
-    }
-
     // 缓存 DOM 元素
     this.elements = {
       homeView: document.getElementById('personality-home'),
@@ -53,9 +44,21 @@ class PersonalityTest {
       modalImage: document.getElementById('personality-modal-img')
     };
 
-    this.renderPreviewGrid();
+    // 先绑定事件（无论数据加载是否成功）
     this.bindEvents();
-    this.showView('home');
+
+    // 加载数据
+    try {
+      const resp = await fetch('personality_data.json');
+      if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+      this.data = await resp.json();
+      this.renderPreviewGrid();
+      this.showView('home');
+    } catch (e) {
+      console.error('加载性格测试数据失败:', e);
+      this.elements.startBtn.textContent = '数据加载失败，请刷新重试';
+      this.elements.startBtn.disabled = true;
+    }
   }
 
   // 绑定事件
@@ -110,6 +113,7 @@ class PersonalityTest {
 
   // 开始测试
   startQuiz() {
+    if (!this.data) return;
     this.state.currentQuestion = 0;
     this.state.answers = {};
     this.state.result = null;
