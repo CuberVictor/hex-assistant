@@ -1,5 +1,4 @@
 // Vercel Serverless Function - Coze API 代理（流式输出）
-// 解决 Vercel 10 秒超时问题
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -67,22 +66,33 @@ export default async function handler(req, res) {
       const lines = buffer.split('\n');
       buffer = lines.pop() || '';
 
+      let eventType = '';
+
       for (const line of lines) {
-        if (line.startsWith('data:')) {
+        if (line.startsWith('event:')) {
+          eventType = line.slice(6).trim();
+        } else if (line.startsWith('data:')) {
           const data = line.slice(5).trim();
-          if (data === '[DONE]') {
-            res.write('data: [DONE]\n\n');
-            break;
-          }
+          if (!data) continue;
+
           try {
             const parsed = JSON.parse(data);
-            // 提取内容
-            if (parsed.choices && parsed.choices[0]?.delta?.content) {
-              res.write(`data: ${JSON.stringify({ content: parsed.choices[0].delta.content })}\n\n`);
-            }
-            // 处理 Coze 特有的格式
-            if (parsed.type === 'message' && parsed.content) {
+
+            // 处理消息增量
+            if (eventType === 'conversation.message.delta' && parsed.content) {
               res.write(`data: ${JSON.stringify({ content: parsed.content })}\n\n`);
+            }
+
+            // 处理对话完成
+            if (eventType === 'conversation.chat.completed') {
+              res.write('data: [DONE]\n\n');
+              break;
+            }
+
+            // 处理错误
+            if (eventType === 'conversation.chat.failed') {
+              res.write(`data: ${JSON.stringify({ error: '对话失败' })}\n\n`);
+              break;
             }
           } catch (e) {
             // 忽略解析错误
