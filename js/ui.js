@@ -240,7 +240,7 @@ class UIManager {
   addMessage(role, content) {
     const messageDiv = document.createElement('div');
     messageDiv.className = `chat-message ${role}`;
-    const messageId = 'msg-' + Date.now();
+    const messageId = 'msg-' + Date.now() + '-' + Math.random().toString(36).slice(2, 6);
     messageDiv.id = messageId;
     messageDiv.innerHTML = `
       <div class="message-avatar">${role === 'user' ? '👤' : '🤖'}</div>
@@ -248,6 +248,7 @@ class UIManager {
     `;
     this.elements.chatMessages.appendChild(messageDiv);
     this.elements.chatMessages.scrollTop = this.elements.chatMessages.scrollHeight;
+    console.log(`[addMessage] role=${role}, id=${messageId}, container children=${this.elements.chatMessages.children.length}`);
     return messageId;
   }
 
@@ -260,6 +261,8 @@ class UIManager {
         contentDiv.innerHTML = content;
         this.elements.chatMessages.scrollTop = this.elements.chatMessages.scrollHeight;
       }
+    } else {
+      console.warn(`[updateMessage] 找不到消息元素: ${messageId}`);
     }
   }
 
