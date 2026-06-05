@@ -191,10 +191,10 @@ class PersonalityTest {
     this.data.results.forEach(r => {
       const card = document.createElement('button');
       card.type = 'button';
-      card.className = 'aspect-square overflow-hidden rounded-md border border-border/40 bg-secondary/30 transition hover:border-rarity-gold/60 focus:outline-none focus:ring-2 focus:ring-rarity-gold focus:ring-offset-2 focus:ring-offset-background cursor-pointer relative group';
+      card.className = 'flex flex-col items-center gap-1.5 rounded-lg border border-border/30 bg-card/60 p-2 transition hover:border-rarity-gold/50 hover:bg-card/90 focus:outline-none focus:ring-2 focus:ring-rarity-gold/40 cursor-pointer';
       card.innerHTML = `
-        <img src="images/personality/${r.id}.webp" alt="${r.name}" class="h-full w-full object-cover" loading="lazy" decoding="async">
-        <div class="absolute inset-x-0 bottom-0 bg-black/60 text-white text-xs font-bold py-1.5 px-2 text-center opacity-0 group-hover:opacity-100 transition-opacity">${r.name}</div>
+        <img src="images/personality/${r.id}.webp" alt="${r.name}" class="w-full aspect-square rounded-md object-cover" loading="lazy" decoding="async">
+        <span class="text-[11px] font-medium text-muted-foreground leading-tight text-center line-clamp-2">${r.name}</span>
       `;
       card.addEventListener('click', () => this.showDetailModal(r));
       grid.appendChild(card);
@@ -252,10 +252,10 @@ class PersonalityTest {
     container.innerHTML = '';
     q.options.forEach(opt => {
       const btn = document.createElement('button');
-      btn.className = 'w-full text-left rounded-lg border border-border/50 bg-secondary/20 p-4 transition-all hover:bg-secondary/40 hover:border-primary/40 focus:outline-none focus:ring-2 focus:ring-primary/30 flex items-start gap-3 cursor-pointer';
+      btn.className = 'w-full text-left rounded-lg border border-border/40 bg-card/80 p-4 transition-all hover:bg-card hover:border-rarity-gold/50 focus:outline-none focus:ring-2 focus:ring-rarity-gold/30 flex items-start gap-3 cursor-pointer';
       btn.innerHTML = `
-        <span class="inline-flex items-center justify-center w-7 h-7 rounded-md bg-primary/20 text-primary text-xs font-bold shrink-0">${opt.id.toUpperCase()}</span>
-        <span class="text-sm md:text-base">${opt.text}</span>
+        <span class="inline-flex items-center justify-center w-7 h-7 rounded-md bg-rarity-gold/20 text-rarity-gold text-xs font-bold shrink-0 mt-0.5">${opt.id.toUpperCase()}</span>
+        <span class="text-sm md:text-base text-foreground">${opt.text}</span>
       `;
       btn.addEventListener('click', () => this.selectOption(opt.id));
       container.appendChild(btn);
@@ -333,7 +333,7 @@ class PersonalityTest {
           <span class="text-sm font-medium">${statLabels[key] || key}</span>
           <span class="text-sm text-rarity-gold font-bold">${value}</span>
         </div>
-        <div class="h-2 w-full rounded-full bg-secondary/50 overflow-hidden">
+        <div class="h-2 w-full rounded-full bg-secondary overflow-hidden">
           <div class="h-full rounded-full bg-primary transition-all duration-500" style="width: 0%"></div>
         </div>
       `;

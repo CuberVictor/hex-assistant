@@ -263,7 +263,7 @@ Mayhem
 
 <!-- ====== 首页 ====== -->
 <div id="personality-home">
-  <div data-slot="card" class="text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm border-border/50 bg-card/40">
+  <div data-slot="card" class="text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm border-border/50 bg-card">
     <div data-slot="card-content" class="space-y-6 p-6 md:p-8">
       <div class="grid gap-6 md:grid-cols-[1.4fr_0.6fr] md:items-start">
         <div>
@@ -279,20 +279,20 @@ Mayhem
           </div>
           <button id="personality-start-btn" data-slot="button" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 text-primary-foreground h-9 px-4 py-2 mt-6 bg-primary hover:bg-primary/90">开始测试</button>
         </div>
-        <div class="rounded-lg border border-border/50 bg-secondary/30 p-5 text-center md:text-left">
+        <div class="rounded-lg border border-border/40 bg-secondary/50 p-5 text-center md:text-left">
           <div class="mb-2 text-sm text-muted-foreground">你的结果</div>
           <div class="text-4xl font-black tracking-wide text-rarity-gold">18</div>
           <div class="mt-1 text-sm text-muted-foreground">types / 16 questions</div>
         </div>
       </div>
-      <div id="personality-preview-grid" class="grid grid-cols-3 gap-2 sm:grid-cols-6"></div>
+      <div id="personality-preview-grid" class="grid grid-cols-4 gap-2 sm:grid-cols-6 md:grid-cols-9"></div>
     </div>
   </div>
 </div>
 
 <!-- ====== 答题页 ====== -->
 <div id="personality-quiz" style="display:none">
-  <div data-slot="card" class="text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm border-border/50 bg-card/40">
+  <div data-slot="card" class="text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm border-border/50 bg-card">
     <div data-slot="card-content" class="p-6 md:p-8">
       <!-- 进度条 -->
       <div class="mb-6">
@@ -300,7 +300,7 @@ Mayhem
           <span id="personality-progress-text" class="text-sm text-muted-foreground">1 / 16</span>
           <span id="personality-progress-percent" class="text-sm text-muted-foreground">0%</span>
         </div>
-        <div class="h-2 w-full rounded-full bg-secondary/50 overflow-hidden">
+        <div class="h-2 w-full rounded-full bg-secondary overflow-hidden">
           <div id="personality-progress-fill" class="h-full rounded-full bg-primary transition-all duration-300" style="width: 0%"></div>
         </div>
       </div>
@@ -316,7 +316,7 @@ Mayhem
 
 <!-- ====== 结果页 ====== -->
 <div id="personality-result" style="display:none">
-  <div data-slot="card" class="text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm border-border/50 bg-card/40">
+  <div data-slot="card" class="text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm border-border/50 bg-card">
     <div data-slot="card-content" class="p-6 md:p-8">
       <div class="grid gap-6 md:grid-cols-[0.4fr_0.6fr] md:items-start">
         <!-- 结果大图 -->
@@ -335,18 +335,18 @@ Mayhem
 
           <!-- 优势 / 劣势 -->
           <div class="grid gap-3 sm:grid-cols-2 mb-5">
-            <div class="rounded-lg border border-border/50 bg-secondary/30 p-4">
+            <div class="rounded-lg border border-border/40 bg-secondary/50 p-4">
               <div class="text-sm font-bold text-primary mb-1">✦ 优势</div>
               <p id="personality-strength-power" class="text-sm text-muted-foreground"></p>
             </div>
-            <div class="rounded-lg border border-border/50 bg-secondary/30 p-4">
+            <div class="rounded-lg border border-border/40 bg-secondary/50 p-4">
               <div class="text-sm font-bold text-destructive mb-1">⚠ 劣势</div>
               <p id="personality-strength-risk" class="text-sm text-muted-foreground"></p>
             </div>
           </div>
 
           <!-- 分享文本 -->
-          <div class="rounded-lg border border-border/50 bg-secondary/20 p-4 mb-5">
+          <div class="rounded-lg border border-border/40 bg-secondary/40 p-4 mb-5">
             <p id="personality-share-text" class="text-sm text-muted-foreground whitespace-pre-line"></p>
           </div>
 
