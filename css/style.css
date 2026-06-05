@@ -1383,6 +1383,555 @@ body {
   overflow-wrap: break-word;
 }
 
+/* ========== 性格测试页面 ========== */
+
+/* 顶部返回栏 */
+.personality-nav {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 30px;
+  background: rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.personality-back {
+  color: #8892b0;
+  text-decoration: none;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.3s ease;
+}
+
+.personality-back:hover {
+  color: #ccd6f6;
+}
+
+.personality-nav-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  background: linear-gradient(90deg, #FFD700, #FF69B4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 首页 Hero 区域 */
+.personality-hero {
+  text-align: center;
+  padding: 60px 20px 40px;
+}
+
+.personality-hero-badge {
+  display: inline-block;
+  background: rgba(255, 105, 180, 0.15);
+  border: 1px solid rgba(255, 105, 180, 0.3);
+  color: #FF69B4;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  margin-bottom: 20px;
+}
+
+.personality-hero h1 {
+  font-size: 2.5rem;
+  background: linear-gradient(90deg, #FFD700, #FF69B4, #7b2ff7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 15px;
+}
+
+.personality-hero-desc {
+  color: #8892b0;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 15px;
+  line-height: 1.6;
+}
+
+.personality-hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 25px;
+  margin-bottom: 30px;
+}
+
+.personality-hero-stat {
+  text-align: center;
+}
+
+.personality-hero-stat-num {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #FFD700;
+}
+
+.personality-hero-stat-label {
+  font-size: 0.85rem;
+  color: #8892b0;
+}
+
+/* 人格预览网格 */
+.personality-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 12px;
+  max-width: 900px;
+  margin: 0 auto 40px;
+  padding: 0 20px;
+}
+
+.personality-preview-card {
+  aspect-ratio: 1;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.personality-preview-card:hover {
+  border-color: rgba(255, 215, 0, 0.5);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.15);
+}
+
+.personality-preview-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.personality-preview-name {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 6px 4px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+  font-size: 0.7rem;
+  text-align: center;
+  color: #fff;
+}
+
+/* 开始测试按钮 */
+.personality-start-btn {
+  background: linear-gradient(90deg, #FFD700, #FF69B4);
+  color: #1a1a2e;
+  border: none;
+  padding: 16px 60px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(255, 215, 0, 0.3);
+}
+
+.personality-start-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 30px rgba(255, 215, 0, 0.4);
+}
+
+/* 答题页 */
+.personality-quiz {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+/* 进度条 */
+.personality-progress {
+  margin-bottom: 30px;
+}
+
+.personality-progress-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: #8892b0;
+}
+
+.personality-progress-bar {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.personality-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #FFD700, #FF69B4);
+  border-radius: 4px;
+  transition: width 0.4s ease;
+}
+
+/* 题目卡片 */
+.personality-question-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 30px;
+  margin-bottom: 25px;
+}
+
+.personality-question-text {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #ccd6f6;
+  line-height: 1.5;
+}
+
+/* 选项 */
+.personality-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.personality-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 18px 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+  color: #ccd6f6;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.personality-option:hover {
+  background: rgba(255, 215, 0, 0.08);
+  border-color: rgba(255, 215, 0, 0.4);
+  transform: translateX(4px);
+}
+
+.personality-option-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  border-radius: 8px;
+  background: rgba(255, 215, 0, 0.15);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  color: #FFD700;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.personality-option-text {
+  padding-top: 4px;
+}
+
+/* 结果页 */
+.personality-result {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+/* 结果大图 */
+.personality-result-image {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid rgba(255, 215, 0, 0.3);
+  margin-bottom: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.personality-result-image:hover {
+  border-color: rgba(255, 215, 0, 0.6);
+  box-shadow: 0 8px 30px rgba(255, 215, 0, 0.15);
+}
+
+.personality-result-image img {
+  width: 100%;
+  display: block;
+}
+
+/* 结果信息卡 */
+.personality-result-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 30px;
+  margin-bottom: 20px;
+}
+
+.personality-result-label {
+  display: inline-block;
+  background: rgba(255, 105, 180, 0.15);
+  border: 1px solid rgba(255, 105, 180, 0.3);
+  color: #FF69B4;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 0.8rem;
+  margin-bottom: 12px;
+}
+
+.personality-result-name {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #FFD700;
+  margin-bottom: 8px;
+}
+
+.personality-result-tagline {
+  font-size: 1.1rem;
+  color: #8892b0;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.personality-result-desc {
+  font-size: 1rem;
+  color: #ccd6f6;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+/* 四维属性条 */
+.personality-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.personality-stat-item {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.personality-stat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+}
+
+.personality-stat-name {
+  color: #8892b0;
+}
+
+.personality-stat-value {
+  color: #FFD700;
+  font-weight: 600;
+}
+
+.personality-stat-bar {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.personality-stat-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #FFD700, #FF69B4);
+  border-radius: 3px;
+  transition: width 0.8s ease;
+}
+
+/* 优势/劣势 */
+.personality-strengths {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.personality-strength-card {
+  border-radius: 12px;
+  padding: 18px;
+  border: 1px solid;
+}
+
+.personality-strength-card.power {
+  background: rgba(74, 222, 128, 0.08);
+  border-color: rgba(74, 222, 128, 0.25);
+}
+
+.personality-strength-card.risk {
+  background: rgba(255, 107, 107, 0.08);
+  border-color: rgba(255, 107, 107, 0.25);
+}
+
+.personality-strength-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.personality-strength-card.power .personality-strength-title {
+  color: #4ade80;
+}
+
+.personality-strength-card.risk .personality-strength-title {
+  color: #ff6b6b;
+}
+
+.personality-strength-text {
+  font-size: 0.9rem;
+  color: #8892b0;
+  line-height: 1.5;
+}
+
+/* 分享文本区 */
+.personality-share-box {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 25px;
+}
+
+.personality-share-text {
+  font-size: 0.95rem;
+  color: #ccd6f6;
+  line-height: 1.6;
+  white-space: pre-line;
+}
+
+/* 操作按钮组 */
+.personality-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.personality-btn {
+  padding: 12px 28px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.personality-btn.primary {
+  background: linear-gradient(90deg, #FFD700, #FF69B4);
+  color: #1a1a2e;
+}
+
+.personality-btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+.personality-btn.secondary {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ccd6f6;
+}
+
+.personality-btn.secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* 结果详情弹窗 */
+.personality-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.personality-modal.active {
+  display: flex;
+}
+
+.personality-modal-content {
+  background: #1a1a2e;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  max-width: 500px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 25px;
+  position: relative;
+}
+
+.personality-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #fff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.personality-modal-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.personality-modal-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #FFD700;
+  margin-bottom: 8px;
+}
+
+.personality-modal-desc {
+  font-size: 0.95rem;
+  color: #8892b0;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.personality-modal-image {
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.personality-modal-image img {
+  width: 100%;
+  display: block;
+}
+
 /* 响应式 */
 @media (max-width: 768px) {
   .top-nav {
@@ -1412,5 +1961,51 @@ body {
 
   .detail-augments {
     justify-content: center;
+  }
+
+  .personality-hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .personality-hero-desc {
+    font-size: 0.95rem;
+  }
+
+  .personality-preview-grid {
+    grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
+    gap: 8px;
+  }
+
+  .personality-question-card {
+    padding: 20px;
+  }
+
+  .personality-question-text {
+    font-size: 1.1rem;
+  }
+
+  .personality-option {
+    padding: 14px 16px;
+    font-size: 0.9rem;
+  }
+
+  .personality-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .personality-strengths {
+    grid-template-columns: 1fr;
+  }
+
+  .personality-result-name {
+    font-size: 1.5rem;
+  }
+
+  .personality-actions {
+    flex-direction: column;
+  }
+
+  .personality-btn {
+    text-align: center;
   }
 }

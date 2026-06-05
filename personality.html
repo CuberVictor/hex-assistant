@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>斗BTI - 海克斯大乱斗人格测试</title>
+  <meta name="description" content="16个乱斗名场面，测出你的斗B人格。结果主打一个可截图、可转发、可互相伤害。">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- 顶部导航 -->
+  <nav class="personality-nav">
+    <a href="index.html" class="personality-back">← 返回助手</a>
+    <span class="personality-nav-title">斗BTI / 海克斯大乱斗人格测试</span>
+  </nav>
+
+  <div class="container">
+
+    <!-- ====== 首页 ====== -->
+    <div id="personality-home">
+      <div class="personality-hero">
+        <span class="personality-hero-badge">斗BTI / 海克斯大乱斗人格测试</span>
+        <h1>海克斯大乱斗人格测试</h1>
+        <p class="personality-hero-desc">16个乱斗名场面，测出你的斗B人格。结果主打一个可截图、可转发、可互相伤害。</p>
+        <div class="personality-hero-stats">
+          <div class="personality-hero-stat">
+            <div class="personality-hero-stat-num">18</div>
+            <div class="personality-hero-stat-label">种人格类型</div>
+          </div>
+          <div class="personality-hero-stat">
+            <div class="personality-hero-stat-num">16</div>
+            <div class="personality-hero-stat-label">道测试题</div>
+          </div>
+        </div>
+        <button id="personality-start-btn" class="personality-start-btn">开始测试</button>
+      </div>
+
+      <!-- 人格类型预览 -->
+      <div id="personality-preview-grid" class="personality-preview-grid"></div>
+    </div>
+
+    <!-- ====== 答题页 ====== -->
+    <div id="personality-quiz" class="personality-quiz" style="display:none">
+      <!-- 进度条 -->
+      <div class="personality-progress">
+        <div class="personality-progress-info">
+          <span id="personality-progress-text">1 / 16</span>
+          <span id="personality-progress-percent">0%</span>
+        </div>
+        <div class="personality-progress-bar">
+          <div id="personality-progress-fill" class="personality-progress-fill" style="width: 0%"></div>
+        </div>
+      </div>
+
+      <!-- 题目卡片 -->
+      <div class="personality-question-card">
+        <div id="personality-question-text" class="personality-question-text"></div>
+      </div>
+
+      <!-- 选项 -->
+      <div id="personality-options" class="personality-options"></div>
+    </div>
+
+    <!-- ====== 结果页 ====== -->
+    <div id="personality-result" class="personality-result" style="display:none">
+      <!-- 结果大图 -->
+      <div class="personality-result-image">
+        <img id="personality-result-img" src="" alt="">
+      </div>
+
+      <!-- 结果信息卡 -->
+      <div class="personality-result-card">
+        <span id="personality-result-label" class="personality-result-label">你的结果</span>
+        <div id="personality-result-name" class="personality-result-name"></div>
+        <div id="personality-result-tagline" class="personality-result-tagline"></div>
+        <p id="personality-result-desc" class="personality-result-desc"></p>
+
+        <!-- 四维属性 -->
+        <div id="personality-stats-grid" class="personality-stats-grid"></div>
+
+        <!-- 优势 / 劣势 -->
+        <div class="personality-strengths">
+          <div class="personality-strength-card power">
+            <div class="personality-strength-title">✦ 优势</div>
+            <p id="personality-strength-power" class="personality-strength-text"></p>
+          </div>
+          <div class="personality-strength-card risk">
+            <div class="personality-strength-title">⚠ 劣势</div>
+            <p id="personality-strength-risk" class="personality-strength-text"></p>
+          </div>
+        </div>
+
+        <!-- 分享文本 -->
+        <div class="personality-share-box">
+          <p id="personality-share-text" class="personality-share-text"></p>
+        </div>
+
+        <!-- 操作按钮 -->
+        <div class="personality-actions">
+          <button id="personality-share-btn" class="personality-btn primary">📤 分享结果</button>
+          <button id="personality-copy-btn" class="personality-btn secondary">📋 复制结果</button>
+          <button id="personality-restart-btn" class="personality-btn secondary">🔄 重测一次</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 详情弹窗 -->
+  <div id="personality-modal" class="personality-modal">
+    <div class="personality-modal-content">
+      <button id="personality-modal-close" class="personality-modal-close">&times;</button>
+      <div id="personality-modal-title" class="personality-modal-title"></div>
+      <p id="personality-modal-desc" class="personality-modal-desc"></p>
+      <div class="personality-modal-image">
+        <img id="personality-modal-img" src="" alt="">
+      </div>
+    </div>
+  </div>
+
+  <script src="js/personality.js"></script>
+</body>
+</html>

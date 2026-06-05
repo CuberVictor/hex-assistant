@@ -1,3 +1,4 @@
 *.json
+!personality_data.json
 *.xlsx
 cosmic-nibbling-star.md

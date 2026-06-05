@@ -76,6 +76,8 @@ class App {
     // 页面切换
     document.querySelectorAll('.nav-link').forEach(link => {
       link.addEventListener('click', (e) => {
+        // 外部链接（如性格测试）直接跳转，不阻止默认行为
+        if (link.classList.contains('nav-link-external')) return;
         e.preventDefault();
         const page = link.dataset.page;
         this.switchPage(page);
