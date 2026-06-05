@@ -161,7 +161,7 @@ class App {
     }
 
     const augmentNames = selectedAugments.map(a => a.name).join('、');
-    uiManager.addMessage('user', `请为 <strong>${selectedHero.name}</strong> 推荐海克斯选择<br>已选海克斯：${augmentNames}`);
+    uiManager.addMessage('user', `请为 <strong>${selectedHero.name}</strong> 推荐海克斯选择<br>已选海克斯：${augmentNames}<br>同时给出实战建议和装备推荐`);
 
     this.state.isLoading = true;
     uiManager.showLoading(true);
