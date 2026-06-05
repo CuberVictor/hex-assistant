@@ -142,7 +142,7 @@ class App {
     if (userMessage) {
       prompt += `\n用户问题：${userMessage}`;
     } else {
-      prompt += '\n请推荐最佳的海克斯选择，并说明理由。';
+      prompt += '\n请推荐最佳的海克斯选择，并说明理由。同时给出实战建议和装备推荐。';
     }
 
     return prompt;
