@@ -195,12 +195,12 @@ body {
 }
 
 .clear-btn {
-  padding: 6px 12px;
+  padding: 8px 16px;
   background: rgba(255, 59, 48, 0.2);
   border: 1px solid rgba(255, 59, 48, 0.3);
-  border-radius: 15px;
+  border-radius: 8px;
   color: #ff6b6b;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   cursor: pointer;
   transition: all 0.3s ease;
 }
