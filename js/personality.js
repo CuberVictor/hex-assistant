@@ -191,12 +191,10 @@ class PersonalityTest {
     this.data.results.forEach(r => {
       const card = document.createElement('button');
       card.type = 'button';
-      card.className = 'flex flex-col items-center gap-1 rounded-md border border-border/30 p-1.5 transition hover:border-rarity-gold/50 focus:outline-none focus:ring-2 focus:ring-rarity-gold/40 cursor-pointer';
-      card.style.width = '90px';
-      card.style.flexShrink = '0';
+      card.style.cssText = 'display:flex;flex-direction:column;align-items:center;gap:4px;width:88px;padding:4px;border:1px solid rgba(255,255,255,0.1);border-radius:8px;background:rgba(255,255,255,0.05);cursor:pointer;flex-shrink:0;';
       card.innerHTML = `
-        <img src="images/personality/${r.id}.webp" alt="${r.name}" class="w-[76px] h-[76px] rounded object-cover" loading="lazy" decoding="async">
-        <span class="text-[10px] text-muted-foreground leading-tight text-center w-full truncate">${r.name}</span>
+        <img src="images/personality/${r.id}.webp" alt="${r.name}" style="width:80px;height:80px;border-radius:6px;object-fit:cover;" loading="lazy" decoding="async">
+        <span style="font-size:10px;color:#999;text-align:center;width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${r.name}</span>
       `;
       card.addEventListener('click', () => this.showDetailModal(r));
       grid.appendChild(card);
