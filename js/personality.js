@@ -186,8 +186,10 @@ class PersonalityTest {
 
   // 渲染首页人格预览网格
   renderPreviewGrid() {
+    console.log('=== PREVIEW GRID v4 ===');
     const grid = this.elements.previewGrid;
     grid.innerHTML = '';
+    grid.style.cssText = 'display:grid !important;grid-template-columns:repeat(6,100px) !important;gap:8px !important;justify-content:center !important;margin-top:16px;';
     this.data.results.forEach(r => {
       const card = document.createElement('button');
       card.type = 'button';
