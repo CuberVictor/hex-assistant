@@ -191,10 +191,10 @@ class PersonalityTest {
     this.data.results.forEach(r => {
       const card = document.createElement('button');
       card.type = 'button';
-      card.style.cssText = 'display:flex;flex-direction:column;align-items:center;gap:4px;width:88px;padding:4px;border:1px solid rgba(255,255,255,0.1);border-radius:8px;background:rgba(255,255,255,0.05);cursor:pointer;flex-shrink:0;';
+      card.style.cssText = 'display:flex;flex-direction:column;align-items:center;gap:4px;padding:4px;border:1px solid rgba(255,255,255,0.08);border-radius:8px;background:rgba(255,255,255,0.03);cursor:pointer;';
       card.innerHTML = `
-        <img src="images/personality/${r.id}.webp" alt="${r.name}" style="width:80px;height:80px;border-radius:6px;object-fit:cover;" loading="lazy" decoding="async">
-        <span style="font-size:10px;color:#999;text-align:center;width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${r.name}</span>
+        <img src="images/personality/${r.id}.webp" alt="${r.name}" style="width:100%;aspect-ratio:1;border-radius:6px;object-fit:cover;" loading="lazy" decoding="async">
+        <span style="font-size:11px;color:#aaa;text-align:center;width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${r.name}</span>
       `;
       card.addEventListener('click', () => this.showDetailModal(r));
       grid.appendChild(card);
@@ -252,11 +252,10 @@ class PersonalityTest {
     container.innerHTML = '';
     q.options.forEach(opt => {
       const btn = document.createElement('button');
-      btn.className = 'w-full text-left rounded-lg border border-border/40 bg-card/80 p-4 transition-all hover:bg-card hover:border-rarity-gold/50 focus:outline-none focus:ring-2 focus:ring-rarity-gold/30 flex items-start gap-3 cursor-pointer';
-      btn.innerHTML = `
-        <span class="inline-flex items-center justify-center w-7 h-7 rounded-md bg-rarity-gold/20 text-rarity-gold text-xs font-bold shrink-0 mt-0.5">${opt.id.toUpperCase()}</span>
-        <span class="text-sm md:text-base text-foreground">${opt.text}</span>
-      `;
+      btn.style.cssText = 'display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:999px;border:1px solid rgba(200,170,255,0.4);background:rgba(200,170,255,0.08);color:#e0d0f0;font-size:14px;cursor:pointer;transition:all 0.15s;line-height:1.4;';
+      btn.onmouseenter = () => { btn.style.background = 'rgba(200,170,255,0.2)'; btn.style.borderColor = 'rgba(200,170,255,0.7)'; };
+      btn.onmouseleave = () => { btn.style.background = 'rgba(200,170,255,0.08)'; btn.style.borderColor = 'rgba(200,170,255,0.4)'; };
+      btn.innerHTML = `<span style="font-weight:700;color:#c8aaff;">${opt.id.toUpperCase()}</span> ${opt.text}`;
       btn.addEventListener('click', () => this.selectOption(opt.id));
       container.appendChild(btn);
     });

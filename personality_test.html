@@ -285,7 +285,7 @@ Mayhem
           <div class="mt-1 text-sm text-muted-foreground">types / 16 questions</div>
         </div>
       </div>
-      <div id="personality-preview-grid" style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;"></div>
+      <div id="personality-preview-grid" style="display:grid;grid-template-columns:repeat(6,1fr);gap:8px;"></div>
     </div>
   </div>
 </div>
@@ -305,11 +305,11 @@ Mayhem
         </div>
       </div>
       <!-- 题目卡片 -->
-      <div class="mb-6">
-        <div id="personality-question-text" class="text-lg font-bold md:text-xl"></div>
+      <div style="margin-bottom:20px;">
+        <div id="personality-question-text" style="font-size:20px;font-weight:700;line-height:1.5;"></div>
       </div>
       <!-- 选项 -->
-      <div id="personality-options" class="grid gap-3"></div>
+      <div id="personality-options" style="display:flex;flex-wrap:wrap;gap:10px;"></div>
     </div>
   </div>
 </div>
