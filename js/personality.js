@@ -189,11 +189,12 @@ class PersonalityTest {
     const grid = this.elements.previewGrid;
     grid.innerHTML = '';
     this.data.results.forEach(r => {
-      const card = document.createElement('div');
-      card.className = 'personality-preview-card';
+      const card = document.createElement('button');
+      card.type = 'button';
+      card.className = 'aspect-square overflow-hidden rounded-md border border-border/40 bg-secondary/30 transition hover:border-rarity-gold/60 focus:outline-none focus:ring-2 focus:ring-rarity-gold focus:ring-offset-2 focus:ring-offset-background cursor-pointer relative group';
       card.innerHTML = `
-        <img src="images/personality/${r.id}.webp" alt="${r.name}" loading="lazy">
-        <div class="personality-preview-name">${r.name}</div>
+        <img src="images/personality/${r.id}.webp" alt="${r.name}" class="h-full w-full object-cover" loading="lazy" decoding="async">
+        <div class="absolute inset-x-0 bottom-0 bg-black/60 text-white text-xs font-bold py-1.5 px-2 text-center opacity-0 group-hover:opacity-100 transition-opacity">${r.name}</div>
       `;
       card.addEventListener('click', () => this.showDetailModal(r));
       grid.appendChild(card);
@@ -206,12 +207,12 @@ class PersonalityTest {
     this.elements.modalDesc.textContent = result.tagline + '\n' + result.description;
     this.elements.modalImage.src = `images/personality/${result.id}.webp`;
     this.elements.modalImage.alt = result.name;
-    this.elements.modal.classList.add('active');
+    this.elements.modal.style.display = 'flex';
   }
 
   // 关闭弹窗
   closeModal() {
-    this.elements.modal.classList.remove('active');
+    this.elements.modal.style.display = 'none';
   }
 
   // 切换视图
@@ -251,10 +252,10 @@ class PersonalityTest {
     container.innerHTML = '';
     q.options.forEach(opt => {
       const btn = document.createElement('button');
-      btn.className = 'personality-option';
+      btn.className = 'w-full text-left rounded-lg border border-border/50 bg-secondary/20 p-4 transition-all hover:bg-secondary/40 hover:border-primary/40 focus:outline-none focus:ring-2 focus:ring-primary/30 flex items-start gap-3 cursor-pointer';
       btn.innerHTML = `
-        <span class="personality-option-label">${opt.id.toUpperCase()}</span>
-        <span class="personality-option-text">${opt.text}</span>
+        <span class="inline-flex items-center justify-center w-7 h-7 rounded-md bg-primary/20 text-primary text-xs font-bold shrink-0">${opt.id.toUpperCase()}</span>
+        <span class="text-sm md:text-base">${opt.text}</span>
       `;
       btn.addEventListener('click', () => this.selectOption(opt.id));
       container.appendChild(btn);
@@ -326,22 +327,23 @@ class PersonalityTest {
     this.elements.statsGrid.innerHTML = '';
     Object.entries(r.stats).forEach(([key, value]) => {
       const item = document.createElement('div');
-      item.className = 'personality-stat-item';
+      item.className = 'grid gap-1';
       item.innerHTML = `
-        <div class="personality-stat-header">
-          <span class="personality-stat-name">${statLabels[key] || key}</span>
-          <span class="personality-stat-value">${value}</span>
+        <div class="flex items-center justify-between">
+          <span class="text-sm font-medium">${statLabels[key] || key}</span>
+          <span class="text-sm text-rarity-gold font-bold">${value}</span>
         </div>
-        <div class="personality-stat-bar">
-          <div class="personality-stat-fill" style="width: 0%"></div>
+        <div class="h-2 w-full rounded-full bg-secondary/50 overflow-hidden">
+          <div class="h-full rounded-full bg-primary transition-all duration-500" style="width: 0%"></div>
         </div>
       `;
       this.elements.statsGrid.appendChild(item);
 
       // 动画：延迟设置宽度
+      const fillBar = item.lastElementChild.firstElementChild;
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
-          item.querySelector('.personality-stat-fill').style.width = `${value}%`;
+          fillBar.style.width = `${value}%`;
         });
       });
     });
