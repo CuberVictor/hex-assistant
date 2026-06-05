@@ -137,7 +137,7 @@ class App {
     return prompt;
   }
 
-  // 获取推荐
+  // 获取推荐（流式输出）
   async getRecommendation() {
     if (this.state.isLoading) return;
 
@@ -156,17 +156,20 @@ class App {
     uiManager.showLoading(true);
     uiManager.updateRecommendButton(true, true);
 
-    const loadingMsgId = uiManager.addMessage('system', '⏳ 正在分析中，请稍候...');
+    // 创建空的 assistant 消息用于流式更新
+    const msgId = uiManager.addMessage('assistant', '⏳ 正在分析中...');
 
     try {
       const prompt = this.buildPrompt(selectedHero, selectedAugments);
-      const result = await aiManager.chat(prompt);
 
-      uiManager.removeMessage(loadingMsgId);
-      uiManager.addMessage('assistant', result.replace(/\n/g, '<br>'));
+      // 使用流式输出
+      await aiManager.chat(prompt, (chunk, fullContent) => {
+        // 更新消息内容（打字机效果）
+        uiManager.updateMessage(msgId, fullContent.replace(/\n/g, '<br>'));
+      });
+
     } catch (error) {
-      uiManager.removeMessage(loadingMsgId);
-      uiManager.addMessage('system', `❌ ${error.message || '获取推荐失败，请重试'}`);
+      uiManager.updateMessage(msgId, `❌ ${error.message || '获取推荐失败，请重试'}`);
     } finally {
       this.state.isLoading = false;
       uiManager.showLoading(false);
@@ -174,7 +177,7 @@ class App {
     }
   }
 
-  // 发送消息
+  // 发送消息（流式输出）
   async sendMessage() {
     const input = uiManager.elements.chatInput;
     const message = input.value.trim();
@@ -188,16 +191,22 @@ class App {
     this.state.isLoading = true;
     uiManager.showLoading(true);
 
+    // 创建空的 assistant 消息用于流式更新
+    const msgId = uiManager.addMessage('assistant', '⏳ 正在思考...');
+
     try {
       const selectedHero = champions.find(c => c.id === this.state.selectedHeroId);
       const selectedAugments = hexAugments.filter(a => this.state.selectedAugmentIds.includes(a.id));
 
       const prompt = this.buildPrompt(selectedHero, selectedAugments, message);
-      const result = await aiManager.chat(prompt);
 
-      uiManager.addMessage('assistant', result.replace(/\n/g, '<br>'));
+      // 使用流式输出
+      await aiManager.chat(prompt, (chunk, fullContent) => {
+        uiManager.updateMessage(msgId, fullContent.replace(/\n/g, '<br>'));
+      });
+
     } catch (error) {
-      uiManager.addMessage('system', `❌ ${error.message || '发送失败，请重试'}`);
+      uiManager.updateMessage(msgId, `❌ ${error.message || '发送失败，请重试'}`);
     } finally {
       this.state.isLoading = false;
       uiManager.showLoading(false);

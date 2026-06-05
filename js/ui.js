@@ -251,6 +251,18 @@ class UIManager {
     return messageId;
   }
 
+  // 更新聊天消息内容（用于流式输出）
+  updateMessage(messageId, content) {
+    const msg = document.getElementById(messageId);
+    if (msg) {
+      const contentDiv = msg.querySelector(".message-content");
+      if (contentDiv) {
+        contentDiv.innerHTML = content;
+        this.elements.chatMessages.scrollTop = this.elements.chatMessages.scrollHeight;
+      }
+    }
+  }
+
   // 移除聊天消息
   removeMessage(messageId) {
     const msg = document.getElementById(messageId);

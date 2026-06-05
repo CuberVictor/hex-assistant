@@ -1,13 +1,11 @@
-// Vercel Serverless Function - Coze API 代理
-// Token 存在 Vercel 环境变量中，前端看不到
+// Vercel Serverless Function - Coze API 代理（流式输出）
+// 解决 Vercel 10 秒超时问题
 
 export default async function handler(req, res) {
-  // 只允许 POST 请求
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  // 从环境变量获取配置
   const API_KEY = process.env.COZE_API_KEY;
   const BOT_ID = process.env.COZE_BOT_ID;
 
@@ -22,7 +20,12 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: '缺少 prompt 参数' });
     }
 
-    // 调用 Coze API
+    // 设置 SSE 响应头
+    res.setHeader('Content-Type', 'text/event-stream');
+    res.setHeader('Cache-Control', 'no-cache');
+    res.setHeader('Connection', 'keep-alive');
+
+    // 调用 Coze API（开启流式）
     const chatResponse = await fetch('https://api.coze.cn/v3/chat', {
       method: 'POST',
       headers: {
@@ -39,76 +42,60 @@ export default async function handler(req, res) {
             content_type: 'text'
           }
         ],
-        stream: false,
+        stream: true,
         auto_save_history: true
       })
     });
 
     if (!chatResponse.ok) {
       const error = await chatResponse.json().catch(() => ({}));
-      return res.status(chatResponse.status).json({ error: error.msg || 'Coze API 调用失败' });
+      res.write(`data: ${JSON.stringify({ error: error.msg || 'Coze API 调用失败' })}\n\n`);
+      res.end();
+      return;
     }
 
-    const chatData = await chatResponse.json();
+    // 处理流式响应
+    const reader = chatResponse.body.getReader();
+    const decoder = new TextDecoder();
+    let buffer = '';
 
-    if (chatData.code !== 0) {
-      return res.status(400).json({ error: chatData.msg || 'Coze API 错误' });
-    }
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
 
-    const chatId = chatData.data?.id;
-    const conversationId = chatData.data?.conversation_id;
+      buffer += decoder.decode(value, { stream: true });
+      const lines = buffer.split('\n');
+      buffer = lines.pop() || '';
 
-    // 轮询等待结果
-    let status = 'in_progress';
-    let attempts = 0;
-    const maxAttempts = 30;
-
-    while (status === 'in_progress' || status === 'created') {
-      if (attempts >= maxAttempts) {
-        return res.status(408).json({ error: '请求超时' });
+      for (const line of lines) {
+        if (line.startsWith('data:')) {
+          const data = line.slice(5).trim();
+          if (data === '[DONE]') {
+            res.write('data: [DONE]\n\n');
+            break;
+          }
+          try {
+            const parsed = JSON.parse(data);
+            // 提取内容
+            if (parsed.choices && parsed.choices[0]?.delta?.content) {
+              res.write(`data: ${JSON.stringify({ content: parsed.choices[0].delta.content })}\n\n`);
+            }
+            // 处理 Coze 特有的格式
+            if (parsed.type === 'message' && parsed.content) {
+              res.write(`data: ${JSON.stringify({ content: parsed.content })}\n\n`);
+            }
+          } catch (e) {
+            // 忽略解析错误
+          }
+        }
       }
-
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      attempts++;
-
-      const statusResponse = await fetch(
-        `https://api.coze.cn/v3/chat/retrieve?chat_id=${chatId}&conversation_id=${conversationId}`,
-        { headers: { 'Authorization': `Bearer ${API_KEY}` } }
-      );
-
-      if (statusResponse.ok) {
-        const statusData = await statusResponse.json();
-        status = statusData.data?.status;
-      }
     }
 
-    if (status === 'failed') {
-      return res.status(500).json({ error: '对话失败' });
-    }
-
-    // 获取消息
-    const messagesResponse = await fetch(
-      `https://api.coze.cn/v3/chat/message/list?chat_id=${chatId}&conversation_id=${conversationId}`,
-      { headers: { 'Authorization': `Bearer ${API_KEY}` } }
-    );
-
-    if (!messagesResponse.ok) {
-      return res.status(500).json({ error: '获取消息失败' });
-    }
-
-    const messagesData = await messagesResponse.json();
-    const messages = messagesData.data || [];
-    const assistantMessage = messages.find(m => m.role === 'assistant' && m.type === 'answer');
-
-    if (!assistantMessage) {
-      return res.status(500).json({ error: '未获取到回复' });
-    }
-
-    // 返回结果
-    return res.status(200).json({ content: assistantMessage.content });
+    res.end();
 
   } catch (error) {
     console.error('API Error:', error);
-    return res.status(500).json({ error: '服务器错误' });
+    res.write(`data: ${JSON.stringify({ error: '服务器错误' })}\n\n`);
+    res.end();
   }
 }
